@@ -16,5 +16,12 @@ module.exports = {
       },
       __key: "images",
     },
+    {
+      resolve: "gatsby-plugin-google-fonts",
+      options: {
+        fonts: ["arbutus slab", "rubik\:500"],
+        display: "swap",
+      },
+    },
   ],
 };
