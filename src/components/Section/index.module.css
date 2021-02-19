@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  max-height: 700px;
+}
+
+.leftPane {
+  flex: 0.4;
+  background: linear-gradient(
+    0deg,
+    rgba(202, 164, 114, 0.8),
+    rgba(202, 164, 114, 0.8)
+  );
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  padding: 5rem;
+}
+
+.rightPane {
+  flex: 0.6;
+}

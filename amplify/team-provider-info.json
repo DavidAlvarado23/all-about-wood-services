@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-allaboutwoodservices-dev-202235-authRole",
+      "UnauthRoleArn": "arn:aws:iam::911009756273:role/amplify-allaboutwoodservices-dev-202235-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::911009756273:role/amplify-allaboutwoodservices-dev-202235-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-allaboutwoodservices-dev-202235-deployment",
+      "UnauthRoleName": "amplify-allaboutwoodservices-dev-202235-unauthRole",
+      "StackName": "amplify-allaboutwoodservices-dev-202235",
+      "StackId": "arn:aws:cloudformation:us-east-2:911009756273:stack/amplify-allaboutwoodservices-dev-202235/d4966510-72e7-11eb-a2ae-02e0b009c38a",
+      "AmplifyAppId": "d212siyu2nt6mf"
+    }
+  }
+}

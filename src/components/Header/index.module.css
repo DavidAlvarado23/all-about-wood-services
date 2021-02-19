@@ -1,0 +1,29 @@
+.header {
+  height: 15vh;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.85) 18.75%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  width: 100%;
+}
+
+.headerContainer {
+  height: 100%;
+  padding: 0px 150px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  min-width: 118px;
+  min-height: 90px;
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  color: white;
+}
