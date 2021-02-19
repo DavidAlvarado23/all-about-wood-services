@@ -5,14 +5,20 @@ import Img from "gatsby-image";
 import HeaderMenuItem from "./HeaderMenuItem";
 import styles from "./index.module.css";
 
-const Header = ({ superimposed }) => {
+const Header = () => {
   const data = useStaticQuery(graphql`
     query {
       allFile(filter: { relativePath: { eq: "logo.png" } }) {
         edges {
           node {
             childImageSharp {
-              fluid(rotate: 90, maxWidth: 160, maxHeight: 90, fit: CONTAIN, pngQuality: 90) {
+              fluid(
+                rotate: 90
+                maxWidth: 160
+                maxHeight: 90
+                fit: CONTAIN
+                pngQuality: 90
+              ) {
                 ...GatsbyImageSharpFluid
               }
             }
@@ -23,10 +29,7 @@ const Header = ({ superimposed }) => {
   `);
 
   return (
-    <header
-      className={styles.header}
-      style={superimposed ? { position: "absolute" } : {}}
-    >
+    <header className={styles.header}>
       <div className={styles.headerContainer}>
         <Img
           className={styles.logo}
