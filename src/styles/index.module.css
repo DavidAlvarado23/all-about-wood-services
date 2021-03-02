@@ -23,12 +23,23 @@
 
 .title h2 {
   margin: 0;
-  font-family: "Rubik";
-  font-weight: bold;
-  font-size: clamp(1rem, -0.875rem + 8.333333vw, 1.5rem);
-  line-height: 28px;
+  font-family: "BioRhyme";
+  font-weight: 800;
+  font-size: clamp(1rem, -0.875rem + 8.333333vw, 2rem);
+  line-height: 53px;
   text-align: center;
-  letter-spacing: 0.02em;
   padding: 0px 18vw;
-  text-shadow: 0.5px 0 0 rgba(202, 164, 114, 0.8);
+}
+
+.ourServices {
+  height: 80vh;
+  padding: 90px;
+}
+
+.ourServicesTitle {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: clamp(4rem, -0.875rem + 8.333333vw, 4.5rem);
+  letter-spacing: -0.04em;
+  text-shadow: 4px 4px 15px rgba(125, 96, 57, 0.75);
 }

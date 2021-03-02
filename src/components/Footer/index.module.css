@@ -7,11 +7,6 @@
 
 .footerImage {
   height: 100%;
-  background: linear-gradient(
-    0deg,
-    rgba(202, 164, 114, 0.8),
-    rgba(202, 164, 114, 0.8)
-  );
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -25,4 +20,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  font-family: "Arbutus Slab";
+  font-weight: normal;
+  line-height: 22px;
 }

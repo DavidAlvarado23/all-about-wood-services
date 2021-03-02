@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: "All About Wood Services",
-    siteUrl: "https://master.d212siyu2nt6mf.amplifyapp.com/"
+    siteUrl: "https://master.d212siyu2nt6mf.amplifyapp.com/",
   },
   plugins: [
     "gatsby-plugin-sharp",
@@ -18,9 +18,11 @@ module.exports = {
       __key: "images",
     },
     {
-      resolve: "gatsby-plugin-google-fonts",
+      resolve: "gatsby-plugin-web-font-loader",
       options: {
-        fonts: ["arbutus slab", "rubik\:500"],
+        google: {
+          families: ["Arbutus Slab", "Rubik", "Rubik:500", "BioRhyme"],
+        },
         display: "swap",
       },
     },

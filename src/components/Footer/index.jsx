@@ -24,7 +24,9 @@ const Footer = () => {
         }
       }
 
-      bannerFile: allFile(filter: { relativePath: { eq: "banner.jpg" } }) {
+      bannerFile: allFile(
+        filter: { relativePath: { eq: "banner_filter.png" } }
+      ) {
         edges {
           node {
             childImageSharp {
@@ -54,10 +56,15 @@ const Footer = () => {
             <a
               href="https://www.facebook.com/All-about-Wood-Service-KC-102386658266078"
               target="_blank"
+              rel="noreferrer"
             >
               <Img fixed={facebookLogo} />
             </a>
-            <a href="https://www.instagram.com" target="_blank">
+            <a
+              href="https://www.instagram.com"
+              target="_blank"
+              rel="noreferrer"
+            >
               <Img style={{ marginLeft: 30 }} fixed={instagramLogo} />
             </a>
           </div>

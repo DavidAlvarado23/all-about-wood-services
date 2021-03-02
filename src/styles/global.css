@@ -26,3 +26,9 @@ h4 {
 div {
   font-family: "Rubik";
 }
+
+p {
+  font-family: "Rubik";
+  font-weight: 500;
+  line-height: 19px;
+}
