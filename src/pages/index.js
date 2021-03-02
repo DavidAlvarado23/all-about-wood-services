@@ -77,7 +77,7 @@ export const query = graphql`
         node {
           childImageSharp {
             fluid(pngQuality: 100, fit: CONTAIN) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_noBase64
             }
           }
         }
@@ -91,7 +91,7 @@ export const query = graphql`
         node {
           childImageSharp {
             fluid(fit: CONTAIN, maxHeight: 700, jpegQuality: 100) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_noBase64
             }
           }
         }
