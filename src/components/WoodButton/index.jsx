@@ -21,7 +21,7 @@ const WoodButton = ({
           node {
             childImageSharp {
               fluid {
-                ...GatsbyImageSharpFluid
+                ...GatsbyImageSharpFluid_noBase64
               }
             }
           }

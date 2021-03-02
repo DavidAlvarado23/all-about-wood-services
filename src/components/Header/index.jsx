@@ -19,7 +19,7 @@ const Header = () => {
                 fit: CONTAIN
                 pngQuality: 90
               ) {
-                ...GatsbyImageSharpFluid
+                ...GatsbyImageSharpFluid_noBase64
               }
             }
           }
