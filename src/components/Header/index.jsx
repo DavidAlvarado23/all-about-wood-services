@@ -36,9 +36,10 @@ const Header = () => {
           fluid={data.allFile.edges[0].node.childImageSharp.fluid}
         />
         <div className={styles.menu}>
-          <HeaderMenuItem>Home</HeaderMenuItem>
-          <HeaderMenuItem>Products</HeaderMenuItem>
-          <HeaderMenuItem>About</HeaderMenuItem>
+          <HeaderMenuItem linkTo={"/"}>Home</HeaderMenuItem>
+          <HeaderMenuItem linkTo={"/services"}>Services</HeaderMenuItem>
+          <HeaderMenuItem linkTo={"/about"}>About</HeaderMenuItem>
+          <HeaderMenuItem linkTo={"/quote"}>Quote</HeaderMenuItem>
         </div>
       </div>
     </header>

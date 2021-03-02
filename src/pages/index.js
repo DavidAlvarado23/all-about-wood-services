@@ -5,9 +5,11 @@ import BackgroundImage from "gatsby-background-image";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Section from "../components/Section";
-import Title from "../components/Title";
+import Subtitle from "../components/Subtitle";
+import WoodButton from "../components/WoodButton";
 
 import styles from "../styles/index.module.css";
+import { colors } from "../styles";
 
 const IndexPage = ({ data }) => {
   const backgroundBanner = data.allFile.edges[0].node.childImageSharp.fluid;
@@ -23,17 +25,18 @@ const IndexPage = ({ data }) => {
       >
         <Header />
         <div className={styles.title}>
-          <h1>All About Wood Services</h1>
-          <h2>
-            We are a company dedicated to the construction, creation and
-            renovation of wooden spaces, which we seek to satisfy each client
-            with our work
-          </h2>
+          <div style={{ marginBottom: 50 }}>
+            <h1>All About Wood Services</h1>
+            <h2 style={{ fontWeight: 800 }}>Kansas City, KS</h2>
+          </div>
+          <WoodButton showArrow linkTo={"/quote"}>
+            Get Your Free Quote
+          </WoodButton>
         </div>
       </BackgroundImage>
       <Section rightImage={sectionRightImage}>
-        <Title>What we do</Title>
-        <div>
+        <Subtitle>What we do</Subtitle>
+        <div style={{ color: colors.white }}>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sit amet
             neque lorem. Nulla aliquet, nisi sit amet condimentum vestibulum,
@@ -48,6 +51,20 @@ const IndexPage = ({ data }) => {
           </p>
         </div>
       </Section>
+      <BackgroundImage
+        className={styles.ourServices}
+        fluid={backgroundBanner}
+        preserveStackingContext
+      >
+        <WoodButton isButton={false} style={{ padding: 0, maxWidth: "40rem" }}>
+          <h2 className={styles.ourServicesTitle}>Our Services</h2>
+        </WoodButton>
+        <div>Images components</div>
+        <WoodButton showArrow linkTo={"/services"}>
+          Check all our services
+        </WoodButton>
+      </BackgroundImage>
+      <Section>About us Section</Section>
       <Footer />
     </div>
   );
@@ -73,7 +90,7 @@ export const query = graphql`
       edges {
         node {
           childImageSharp {
-            fluid(fit: CONTAIN, maxHeight: 700) {
+            fluid(fit: CONTAIN, maxHeight: 700, jpegQuality: 100) {
               ...GatsbyImageSharpFluid
             }
           }

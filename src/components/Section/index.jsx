@@ -1,39 +1,27 @@
 import React from "react";
-import { useStaticQuery, graphql } from "gatsby";
-import BackgroundImage from "gatsby-background-image";
 import Img from "gatsby-image";
 
-import Title from "../Title";
+import { colors } from "../../styles";
 import styles from "./index.module.css";
 
 const Section = ({ rightImage, children }) => {
-  const data = useStaticQuery(graphql`
-    query {
-      allFile(filter: { relativePath: { eq: "banner.jpg" } }) {
-        edges {
-          node {
-            childImageSharp {
-              fluid {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-        }
-      }
-    }
-  `);
+  const rgba = `rgba(${colors.primary.rgb}, 0.9)`;
 
-  const bannerImage = data.allFile.edges[0].node.childImageSharp.fluid;
   return (
-    <div className={styles.container}>
-      <BackgroundImage
-        className={styles.leftPane}
-        fluid={bannerImage}
-        preserveStackingContext
-      >
-        {children}
-      </BackgroundImage>
-      <Img className={styles.rightPane} fluid={rightImage} />
+    <div
+      className={styles.container}
+      style={{
+        background: `linear-gradient(0deg, ${rgba}, ${rgba})`,
+      }}
+    >
+      {rightImage ? (
+        <>
+          <div className={styles.leftPane}>{children}</div>
+          <Img className={styles.rightPane} fluid={rightImage} />
+        </>
+      ) : (
+        <>{children}</>
+      )}
     </div>
   );
 };

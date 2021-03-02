@@ -1,5 +1,5 @@
 .header {
-  height: 15vh;
+  height: 35vh;
   background: linear-gradient(
     180deg,
     rgba(0, 0, 0, 0.85) 18.75%,
@@ -9,8 +9,8 @@
 }
 
 .headerContainer {
-  height: 100%;
-  padding: 0px 150px;
+  height: 45%;
+  padding: 2vh 150px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
