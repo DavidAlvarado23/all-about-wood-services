@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import Img from "gatsby-image";
 import { useStaticQuery, graphql } from "gatsby";
 
@@ -29,18 +29,22 @@ const ScrollToTopButton = () => {
   `);
 
   const [buttonDisplay, setButtonDisplay] = useState("none");
-  const container = document.querySelector("#___gatsby");
+  const [container, setContainer] = useState();
 
-  const onScroll = () => {
-    setButtonDisplay(container.scrollTop > 20 ? "block" : "none");
-  };
+  const onScroll = useCallback(() => {
+    setButtonDisplay(container && container.scrollTop > 20 ? "block" : "none");
+  }, [container]);
+
+  useEffect(() => {
+    setContainer(document.querySelector("#___gatsby"));
+  }, []);
 
   useEffect(() => {
     onScroll();
 
     window.addEventListener("scroll", onScroll, true);
     return () => window.removeEventListener("scroll", onScroll, true);
-  }, []);
+  }, [container]);
 
   const toTop = () => {
     container.scrollTop = 0;

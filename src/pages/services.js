@@ -5,6 +5,7 @@ import { graphql } from "gatsby";
 import styles from "../styles/services.module.css";
 import Title from "../components/Title";
 import Header from "../components/Header";
+import Footer from "../components/Footer"
 import ScrollToTopButton from "../components/ScrollToTopButton";
 
 import { chunkArray } from "../utils";
@@ -48,6 +49,7 @@ const Services = ({ data }) => {
           </div>
         ))}
       </div>
+      <Footer />
       <ScrollToTopButton />
     </>
   );
