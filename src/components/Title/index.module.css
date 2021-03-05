@@ -1,3 +1,4 @@
 .title {
-  font-size: clamp(2.5rem, -0.875rem + 8.333333vw, 3.5rem);
+  font-size: clamp(4rem, -0.875rem + 8.333333vw, 5rem);
+  text-align: center;
 }
