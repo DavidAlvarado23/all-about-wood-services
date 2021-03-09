@@ -1,0 +1,26 @@
+.quoteContainer {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+h2 {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.subTitle {
+  font-family: "BioRhyme", serif;
+  font-size: 60px;
+}
+
+.containerColumn {
+  margin: 10% 10% 5% 20%;
+}
+
+.ContactInfoContainer {
+  margin-top: 70px;
+}
+.ContactInfoContainer > div {
+  margin-bottom: 40px;
+}
