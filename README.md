@@ -7,16 +7,25 @@
 
 ## :evergreen_tree: Quick start
 
-1.  **Install the dependencies.**
+1. **Install Gatsby globally.**
+    ```shell
+    npm i -g gatsby-cli
+    ```
+
+2.  **Install the dependencies.**
 
     ```shell
     npm install
     ```
 
-2.  **Start developing.**
+3.  **Start developing.**
 
     Navigate into the site’s directory and start it up.
 
     ```shell
     npm run develop
+    ```
+    or
+    ```shell
+    npm start
     ```

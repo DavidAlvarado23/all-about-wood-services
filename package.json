@@ -4,8 +4,15 @@
   "private": true,
   "description": "All About Wood Services",
   "author": "David Alvarado",
+  "contributors": [
+    "Carlos Villanueva"
+  ],
   "keywords": [
-    "gatsby"
+    "wood",
+    "services",
+    "landing",
+    "gatsby",
+    "react"
   ],
   "scripts": {
     "develop": "gatsby develop",
