@@ -10,6 +10,14 @@
       "StackName": "amplify-allaboutwoodservices-dev-202235",
       "StackId": "arn:aws:cloudformation:us-east-2:911009756273:stack/amplify-allaboutwoodservices-dev-202235/d4966510-72e7-11eb-a2ae-02e0b009c38a",
       "AmplifyAppId": "d212siyu2nt6mf"
+    },
+    "categories": {
+      "function": {
+        "allaboutwoodservices6bc40b65": {
+          "deploymentBucketName": "amplify-allaboutwoodservices-dev-202235-deployment",
+          "s3Key": "amplify-builds/allaboutwoodservices6bc40b65-2f4f3535395649422f47-build.zip"
+        }
+      }
     }
   }
 }

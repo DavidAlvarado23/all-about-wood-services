@@ -1,0 +1,14 @@
+{
+  "fieldName": "createQuote",
+  "typeName": "Mutation",
+  "arguments": {
+    "input": {
+      "name": "Tatyana Bartoletti",
+      "email": "tatyanabartoletti@gmail.com",
+      "addressLine": "12540 Fae Mountains",
+      "addressCity": "South Jeffereyborough",
+      "addressState": "Idaho",
+      "message": "Quia quas commodi deleniti debitis quo nulla sed provident delectus. Neque et est dolor beatae ut. Occaecati rerum perferendis ducimus voluptatem ullam nisi aut. Nostrum aut corrupti. Labore maxime consequatur dolorem necessitatibus ea consequuntur non rerum. Consequuntur id voluptatibus."
+    }
+  }
+}
