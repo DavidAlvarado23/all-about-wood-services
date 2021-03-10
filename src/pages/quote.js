@@ -14,7 +14,7 @@ const Quote = ({ data }) => {
     <div>
       <Header />
       <section className={styles.quoteContainer}>
-        <div className={styles.containerColumn}>
+        <div className={styles.containerColumnLeft}>
           <h2 className={styles.subTitle}>Get a quote</h2>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in
@@ -35,7 +35,38 @@ const Quote = ({ data }) => {
             </ContactInfo>
           </div>
         </div>
-        <div></div>
+        <div className={styles.containerColumnRight}>
+          <div className={styles.formContainer}>
+            <div className={styles.formElements}>
+              <label>
+                Name<span className={styles.required}>*</span>
+              </label>
+              <input type="text" />
+
+              <label>
+                Email<span className={styles.required}>*</span>
+              </label>
+              <input type="text" />
+              <label for="email">
+                Address<span className={styles.required}>*</span>
+              </label>
+              <input type="email" placeholder="Address Line" />
+
+              <div className={styles.formAdressContainer}>
+                <input type="email" placeholder="City" />
+                <input type="email" placeholder="State" />
+              </div>
+
+              <label>
+                Message<span className={styles.required}>*</span>
+              </label>
+              <textarea type="email" />
+              <button className={styles.submitButton} type="submit">
+                Send
+              </button>
+            </div>
+          </div>
+        </div>
       </section>
       <Footer />
     </div>

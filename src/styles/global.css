@@ -23,7 +23,9 @@ h4 {
   font-family: "Arbutus Slab";
 }
 
-div {
+div,
+input,
+button {
   font-family: "Rubik";
 }
 
