@@ -17,10 +17,8 @@ const About = ({ data }) => {
     data.sectionRightImage.edges[0].node.childImageSharp.fluid;
   return (
     <div>
-      <Header />
-      <div className={styles.title}>
-        <Title>About Us</Title>
-      </div>
+      <Header minified />
+      <Title>About Us</Title>
       <div className={styles.section}>
         <img
           className={styles.photo}
