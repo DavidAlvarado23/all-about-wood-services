@@ -32,8 +32,7 @@
 }
 
 .ourServices {
-  height: 80vh;
-  padding: 90px;
+  padding: 90px 100px 70px 100px;
 }
 
 .ourServicesTitle {
@@ -42,4 +41,13 @@
   font-size: clamp(4rem, -0.875rem + 8.333333vw, 4.5rem);
   letter-spacing: -0.04em;
   text-shadow: 4px 4px 15px rgba(125, 96, 57, 0.75);
+}
+
+.carousel {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-around;
+  padding-top: 64px;
+  padding-bottom: 64px;
 }

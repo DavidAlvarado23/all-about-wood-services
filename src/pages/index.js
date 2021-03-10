@@ -7,14 +7,22 @@ import Footer from "../components/Footer";
 import Section from "../components/Section";
 import Subtitle from "../components/Subtitle";
 import WoodButton from "../components/WoodButton";
+import ServiceImage from "../components/ServiceImage";
 
 import styles from "../styles/index.module.css";
 import { colors } from "../styles";
+import { capitalize } from "../utils";
 
 const IndexPage = ({ data }) => {
   const backgroundBanner = data.allFile.edges[0].node.childImageSharp.fluid;
   const sectionRightImage =
     data.sectionRightImage.edges[0].node.childImageSharp.fluid;
+  const carouselImages = data.carouselImages.edges.map((edge) => ({
+    image: edge.node.childImageSharp.fluid,
+    title: capitalize(
+      edge.node.childImageSharp.fluid.originalName.split(".")[0]
+    ),
+  }));
 
   return (
     <div>
@@ -38,16 +46,10 @@ const IndexPage = ({ data }) => {
         <Subtitle>What we do</Subtitle>
         <div style={{ color: colors.white }}>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sit amet
-            neque lorem. Nulla aliquet, nisi sit amet condimentum vestibulum,
-            dolor erat facilisis mauris, at pulvinar mi dolor a orci. Nunc ut
-            lacus enim. In vel rutrum nibh, id viverra sem.
-          </p>
-          <p>
-            Ut ornare egestas est. Phasellus ac magna ullamcorper, sollicitudin
-            lacus in, vehicula ante. Aenean et dapibus elit. In aliquet purus eu
-            auctor scelerisque. Vestibulum nec malesuada risus, ut posuere
-            lorem. Aliquam metus nisi, laoreet ut mollis ac, finibus ac lorem.
+            Our company it is dedicated in repair rotted wood around windows,
+            facias, soffits, doors, and anything made of wood. Our services also
+            include painting, priming, and caulking, we bring all our services
+            in the area of Kansas City.
           </p>
         </div>
       </Section>
@@ -59,7 +61,11 @@ const IndexPage = ({ data }) => {
         <WoodButton isButton={false} style={{ padding: 0, maxWidth: "40rem" }}>
           <h2 className={styles.ourServicesTitle}>Our Services</h2>
         </WoodButton>
-        <div>Images components</div>
+        <div className={styles.carousel}>
+          {carouselImages.map((service) => (
+            <ServiceImage image={service.image} title={service.title} />
+          ))}
+        </div>
         <WoodButton showArrow linkTo={"/services"}>
           Check all our services
         </WoodButton>
@@ -92,6 +98,19 @@ export const query = graphql`
           childImageSharp {
             fluid(fit: CONTAIN, maxHeight: 700, jpegQuality: 100) {
               ...GatsbyImageSharpFluid_noBase64
+            }
+          }
+        }
+      }
+    }
+
+    carouselImages: allFile(filter: { relativeDirectory: { eq: "carousel" } }) {
+      edges {
+        node {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+              originalName
             }
           }
         }
