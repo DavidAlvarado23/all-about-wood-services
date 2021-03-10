@@ -12,7 +12,7 @@ const Quote = ({ data }) => {
   const instagramLogo = data.allFile.edges[1].node.childImageSharp.fixed;
   return (
     <div>
-      <Header />
+      <Header minified />
       <section className={styles.quoteContainer}>
         <div className={styles.containerColumnLeft}>
           <h2 className={styles.subTitle}>Get a quote</h2>
