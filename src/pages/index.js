@@ -1,6 +1,7 @@
 import * as React from "react";
 import { graphql } from "gatsby";
 import BackgroundImage from "gatsby-background-image";
+import Img from "gatsby-image";
 
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -23,6 +24,8 @@ const IndexPage = ({ data }) => {
       edge.node.childImageSharp.fluid.originalName.split(".")[0]
     ),
   }));
+  const aboutUsImage = data.aboutUsImage.edges[0].node.childImageSharp.fluid;
+  const rightArrow = data.rightArrow.edges[0].node.childImageSharp.fixed;
 
   return (
     <div>
@@ -70,7 +73,25 @@ const IndexPage = ({ data }) => {
           Check all our services
         </WoodButton>
       </BackgroundImage>
-      <Section>About us Section</Section>
+      <Section>
+        <div className={styles.aboutUsImageContainer}>
+          <Img fluid={aboutUsImage} className={styles.aboutUsImage} />
+        </div>
+        <div
+          className={styles.aboutUsTextContainer}
+          style={{ color: colors.white }}
+        >
+          <Subtitle>About us</Subtitle>
+          <p>
+            We are a company that was born with the desire to grow day by day,
+            working as a team providing an excellent service to our clients.
+          </p>
+          <div className={styles.aboutUsLearnMore}>
+            <p>Learn more</p>
+            <Img fixed={rightArrow} />
+          </div>
+        </div>
+      </Section>
       <Footer />
     </div>
   );
@@ -111,6 +132,37 @@ export const query = graphql`
             fluid {
               ...GatsbyImageSharpFluid
               originalName
+            }
+          }
+        }
+      }
+    }
+
+    aboutUsImage: allFile(
+      filter: { relativePath: { eq: "home_about_us.jpg" } }
+    ) {
+      edges {
+        node {
+          childImageSharp {
+            fluid(fit: CONTAIN) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
+    }
+
+    rightArrow: allFile(filter: { relativePath: { eq: "right_arrow.png" } }) {
+      edges {
+        node {
+          childImageSharp {
+            fixed(
+              height: 12
+              width: 7
+              fit: FILL
+              duotone: { highlight: "#000000", shadow: "#ffffff" }
+            ) {
+              ...GatsbyImageSharpFixed
             }
           }
         }

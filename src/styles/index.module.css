@@ -51,3 +51,28 @@
   padding-top: 64px;
   padding-bottom: 64px;
 }
+
+.aboutUsImageContainer {
+  flex: 3;
+  padding: 70px 0px 70px 70px;
+}
+
+.aboutUsImage {
+  display: block;
+  margin: auto;
+  width: 80%;
+  box-shadow: 4px 4px 70px 4px rgba(0, 0, 0, 0.25);
+}
+
+.aboutUsTextContainer {
+  flex: 2;
+  padding: 3rem 70px 3rem 1rem;
+}
+
+.aboutUsLearnMore {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+  font-weight: bold;
+}

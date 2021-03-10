@@ -10,7 +10,7 @@ import ScrollToTopButton from "../components/ScrollToTopButton";
 
 import { chunkArray } from "../utils";
 
-const imageWidth = 400;
+const imageWidth = 520;
 
 const Services = ({ data }) => {
   const [imageLayout, setImageLayout] = useState([]);
