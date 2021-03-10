@@ -8,3 +8,7 @@ export const chunkArray = (arr = [], chunkCount) => {
   }
   return chunks;
 };
+
+export const capitalize = (string) => {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+};

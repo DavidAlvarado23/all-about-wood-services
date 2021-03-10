@@ -32,8 +32,7 @@
 }
 
 .ourServices {
-  height: 80vh;
-  padding: 90px;
+  padding: 90px 100px 70px 100px;
 }
 
 .ourServicesTitle {
@@ -42,4 +41,38 @@
   font-size: clamp(4rem, -0.875rem + 8.333333vw, 4.5rem);
   letter-spacing: -0.04em;
   text-shadow: 4px 4px 15px rgba(125, 96, 57, 0.75);
+}
+
+.carousel {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-around;
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+
+.aboutUsImageContainer {
+  flex: 3;
+  padding: 70px 0px 70px 70px;
+}
+
+.aboutUsImage {
+  display: block;
+  margin: auto;
+  width: 80%;
+  box-shadow: 4px 4px 70px 4px rgba(0, 0, 0, 0.25);
+}
+
+.aboutUsTextContainer {
+  flex: 2;
+  padding: 3rem 70px 3rem 1rem;
+}
+
+.aboutUsLearnMore {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+  font-weight: bold;
 }
