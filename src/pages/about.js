@@ -1,4 +1,5 @@
 import * as React from "react";
+import Img from "gatsby-image";
 import { graphql } from "gatsby";
 
 import BackgroundImage from "gatsby-background-image";
@@ -12,60 +13,38 @@ import styles from "../styles/about.module.css";
 import { colors } from "../styles";
 
 const About = ({ data }) => {
-  const backgroundBanner = data.allFile.edges[0].node.childImageSharp.fluid;
   const sectionRightImage =
     data.sectionRightImage.edges[0].node.childImageSharp.fluid;
+  const aboutUsSectionImage =
+    data.aboutUsSectionImage.edges[0].node.childImageSharp.fluid;
   return (
     <div>
       <Header minified />
       <Title>About Us</Title>
-      <div className={styles.section}>
-        <img
-          className={styles.photo}
-          src="https://furniture-door.com/wp-content/uploads/Woodworking.jpg"
-          alt="Paris"
-          width="600"
-          height="400"
-        ></img>
-        <br />
-        <br />
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-          dapibus, tortor sit amet faucibus sodales, nibh nisl semper neque, eu
-          tincidunt metus diam sit amet erat. Orci varius natoque penatibus et
-          magnis dis parturient montes, nascetur ridiculus mus. Vestibulum vel
-          nisi pharetra, sollicitudin diam at, tempor orci.
-        </p>
-        <p>
-          Nunc sapien mi, finibus quis placerat non, imperdiet sed nunc. Nam
-          molestie erat eu nibh laoreet finibus. Class aptent taciti sociosqu ad
-          litora torquent per conubia nostra, per inceptos himenaeos. In
-          hendrerit viverra felis, vel ullamcorper massa ullamcorper quis.
-          Curabitur quis viverra eros. Mauris sit amet neque nec nibh blandit
-          hendrerit nec finibus sem. Nullam dignissim eros nibh, a faucibus
-          mauris condimentum ac. Nam ut est diam. Donec efficitur libero quis mi
-          dapibus tempor.
-        </p>
+      <div className={styles.aboutContainer}>
+        <div className={styles.aboutLeftColumn}>
+          <Img className={styles.image} fluid={aboutUsSectionImage} />
+        </div>
+        <div className={styles.aboutRightColumn}>
+          <p>
+            We are a company that was born with the desire to grow day by day,
+            working as a team providing an excellent service to our clients.
+          </p>
+        </div>
       </div>
       <Section rightImage={sectionRightImage}>
         <Subtitle>Mission</Subtitle>
         <div style={{ color: colors.white }}>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-            dapibus, tortor sit amet faucibus sodales, nibh nisl semper neque,
-            eu tincidunt metus diam sit amet erat. Orci varius natoque penatibus
-            et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum
-            vel nisi pharetra, sollicitudin diam at, tempor orci.
+            Reach the expectations of each of our clients in each job. Maintain
+            teamwork to grow day by day.
           </p>
         </div>
         <Subtitle>Vision</Subtitle>
         <div style={{ color: colors.white }}>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-            dapibus, tortor sit amet faucibus sodales, nibh nisl semper neque,
-            eu tincidunt metus diam sit amet erat. Orci varius natoque penatibus
-            et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum
-            vel nisi pharetra, sollicitudin diam at, tempor orci.
+            Being a recognized company in the Kansas City area, because of our
+            responsibility, commitment, and honesty.
           </p>
         </div>
       </Section>
@@ -76,11 +55,13 @@ const About = ({ data }) => {
 };
 export const query = graphql`
   query {
-    allFile(filter: { relativePath: { eq: "banner_filter.png" } }) {
+    aboutUsSectionImage: allFile(
+      filter: { relativePath: { eq: "about_us_image_1.jpg" } }
+    ) {
       edges {
         node {
           childImageSharp {
-            fluid(pngQuality: 100, fit: CONTAIN) {
+            fluid(fit: CONTAIN, maxHeight: 700, jpegQuality: 100) {
               ...GatsbyImageSharpFluid_noBase64
             }
           }
@@ -89,7 +70,7 @@ export const query = graphql`
     }
 
     sectionRightImage: allFile(
-      filter: { relativePath: { eq: "works_image_1.jpg" } }
+      filter: { relativePath: { eq: "about_us_image_2.jpg" } }
     ) {
       edges {
         node {
