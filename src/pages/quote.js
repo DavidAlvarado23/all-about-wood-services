@@ -1,38 +1,69 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { graphql } from "gatsby";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faSpinner,
+  faPhone,
+  faEnvelope,
+} from "@fortawesome/free-solid-svg-icons";
+import Amplify, { API, graphqlOperation } from "aws-amplify";
 
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import ContactInfo from "../components/contactInfo";
 
 import styles from "../styles/quote.module.css";
-import { postQuote } from "../services/postQuote.js";
+import awsconfig from "../aws-exports";
+import { createQuote } from "../graphql/mutations";
+import { socials } from "../utils";
+
+Amplify.configure(awsconfig);
 
 const Quote = ({ data }) => {
   const facebookLogo = data.allFile.edges[0].node.childImageSharp.fixed;
-  const instagramLogo = data.allFile.edges[1].node.childImageSharp.fixed;
 
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [adressLine, setAddressLine] = useState("");
-  const [city, setCity] = useState("");
-  const [state, setState] = useState("");
-  const [message, setMessage] = useState("");
-
-  const dataFromForm = {
-    name: name,
-    email: email,
-    addressLine: adressLine,
-    city: city,
-    state: state,
-    message: message,
+  const formState = {
+    name: "",
+    email: "",
+    addressLine: "",
+    addressCity: "",
+    addressState: "",
+    message: "",
   };
+  const [formData, setFormData] = useState(formState);
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState();
 
-  const handleSubmit = (evt) => {
+  const handleSubmit = async (evt) => {
     evt.preventDefault();
-    postQuote(dataFromForm);
+
+    setLoading(true);
+    try {
+      const response = await API.graphql(
+        graphqlOperation(createQuote, {
+          input: {
+            ...formData,
+          },
+        })
+      );
+
+      if (response && response.data.createQuote.status === "SUCCESS") {
+        setMessage("success");
+      } else {
+        setMessage("error");
+      }
+    } catch (err) {
+      setMessage("error");
+    } finally {
+      setLoading(false);
+    }
   };
 
+  const onFormChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  console.log({ loading });
   return (
     <div>
       <Header minified />
@@ -47,17 +78,14 @@ const Quote = ({ data }) => {
             dapibus lacus vel nibh maximus pellentesque.
           </p>
           <div className={styles.ContactInfoContainer}>
-            <ContactInfo contactIcon={facebookLogo}>
+            <ContactInfo contactIcon={faPhone} isIcon>
               <a href="tel:+1 913-230-4605">1-456-254-7410</a>
             </ContactInfo>
-            <ContactInfo contactIcon={facebookLogo}>
+            <ContactInfo contactIcon={faEnvelope} isIcon>
               <a href="mailto:jonnymn_12@hotmail.com">info@allaboutwood.com</a>
             </ContactInfo>
             <ContactInfo contactIcon={facebookLogo}>
-              <a
-                href="https://www.facebook.com/All-about-Wood-Service-KC-102386658266078"
-                target="_blank"
-              >
+              <a href={socials.facebook} target="_blank">
                 All About Wood Services KC
               </a>
             </ContactInfo>
@@ -71,8 +99,9 @@ const Quote = ({ data }) => {
               </label>
               <input
                 type="text"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
+                value={formData.name}
+                name="name"
+                onChange={onFormChange}
                 required
               />
 
@@ -81,35 +110,33 @@ const Quote = ({ data }) => {
               </label>
               <input
                 type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                value={formData.email}
+                name="email"
+                onChange={onFormChange}
                 required
               />
-              <label>
-                Address<span className={styles.required}>*</span>
-              </label>
+              <label>Address</label>
               <input
                 type="text"
-                value={adressLine}
-                onChange={(e) => setAddressLine(e.target.value)}
+                value={formData.addressLine}
+                name="addressLine"
                 placeholder="Address Line"
-                required
               />
 
               <div className={styles.formAdressContainer}>
                 <input
                   type="text"
-                  value={city}
-                  onChange={(e) => setCity(e.target.value)}
+                  value={formData.addressCity}
+                  name="addressCity"
+                  onChange={onFormChange}
                   placeholder="City"
-                  required
                 />
                 <input
                   type="text"
-                  value={state}
-                  onChange={(e) => setState(e.target.value)}
+                  value={formData.addressState}
+                  name="addressState"
+                  onChange={onFormChange}
                   placeholder="State"
-                  required
                 />
               </div>
 
@@ -118,14 +145,38 @@ const Quote = ({ data }) => {
               </label>
               <textarea
                 type="text"
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
+                value={formData.message}
+                name="message"
+                onChange={onFormChange}
                 required
               />
-              <button className={styles.submitButton} type="submit">
+              <button
+                className={styles.submitButton}
+                type="submit"
+                disabled={loading}
+              >
+                {loading && (
+                  <FontAwesomeIcon
+                    icon={faSpinner}
+                    spin
+                    style={{ marginRight: 10 }}
+                  />
+                )}
                 Send
               </button>
             </div>
+            {message && message === "error" && (
+              <div className={styles.responseMessageError}>
+                Ups! There was an error sending the quote. Please try again or
+                contact with us, we'll be happy to hear from you.
+              </div>
+            )}
+            {message && message === "success" && (
+              <div className={styles.responseMessageSuccess}>
+                Thank you for sending the quote. We'll make contact with you in
+                the following days.
+              </div>
+            )}
           </form>
         </div>
       </section>
@@ -144,7 +195,7 @@ export const query = graphql`
       edges {
         node {
           childImageSharp {
-            fixed(width: 30, height: 30) {
+            fixed(width: 35, height: 35) {
               ...GatsbyImageSharpFixed
             }
           }

@@ -17,11 +17,11 @@ h2 {
 }
 
 .containerColumnLeft {
-  margin: 10% 10% 5% 20%;
+  margin: 5% 10% 5% 20%;
 }
 
 .containerColumnRight {
-  margin: 10% 10% 5% 0;
+  margin: 7% 10% 5% 0;
 }
 
 /* ---------Left Column--------- */
@@ -41,10 +41,9 @@ h2 {
 
   background: white;
   width: 35vw;
-  height: 600px;
   border-radius: 15px;
 
-  padding: 8% 8% 8% 8%;
+  padding: 7%;
 
   box-shadow: 1px 0px 33px 15px rgba(0, 0, 0, 0.08);
   -webkit-box-shadow: 1px 0px 33px 15px rgba(0, 0, 0, 0.08);
@@ -57,13 +56,13 @@ h2 {
 }
 
 .formElements label {
-  margin-bottom: 1em;
+  margin-bottom: 10px;
   font-size: 1.2em;
 }
 
 .formElements input,
 .formElements textarea {
-  padding: 1em;
+  padding: 0.5em;
   margin-bottom: 2em;
   width: 100%;
   box-sizing: border-box;
@@ -98,4 +97,20 @@ h2 {
   background: #30647c;
   color: #fff;
   font-size: 20px;
+}
+
+.responseMessageError {
+  margin-top: 20px;
+  padding: 1em;
+  border-radius: 5px;
+  border: 1px solid red;
+  background-color: rgb(240, 166, 142);
+}
+
+.responseMessageSuccess {
+  margin-top: 20px;
+  padding: 1em;
+  border-radius: 5px;
+  border: 1px solid green;
+  background-color: darkseagreen;
 }
