@@ -1,0 +1,12 @@
+.contactInfoElement {
+  display: flex;
+  align-items: center;
+}
+
+.contactInfoElement a {
+  margin-left: 2vh;
+  font-size: 22px;
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+}

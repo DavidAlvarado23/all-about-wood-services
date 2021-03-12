@@ -15,7 +15,7 @@
       "function": {
         "allaboutwoodservices6bc40b65": {
           "deploymentBucketName": "amplify-allaboutwoodservices-dev-202235-deployment",
-          "s3Key": "amplify-builds/allaboutwoodservices6bc40b65-2f4f3535395649422f47-build.zip"
+          "s3Key": "amplify-builds/allaboutwoodservices6bc40b65-6f79335453464f577853-build.zip"
         }
       }
     }
