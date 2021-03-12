@@ -7,7 +7,7 @@ input CreateQuoteInput {
   name: String!
   email: String!
   addressLine: String
-  addessCity: String
+  addressCity: String
   addressState: String
   message: String!
 }

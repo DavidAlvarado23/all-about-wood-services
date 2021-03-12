@@ -4,6 +4,7 @@ import Img from "gatsby-image";
 import BackgroundImage from "gatsby-background-image";
 
 import styles from "./index.module.css";
+import { socials } from "../../utils";
 
 const Footer = () => {
   const data = useStaticQuery(graphql`
@@ -53,11 +54,7 @@ const Footer = () => {
         <div className={styles.footerContainer}>
           <div>© 2021 All About Wood Services | All right reserved</div>
           <div className={styles.snContainer}>
-            <a
-              href="https://www.facebook.com/All-about-Wood-Service-KC-102386658266078"
-              target="_blank"
-              rel="noreferrer"
-            >
+            <a href={socials.facebook} target="_blank" rel="noreferrer">
               <Img fixed={facebookLogo} />
             </a>
             <a

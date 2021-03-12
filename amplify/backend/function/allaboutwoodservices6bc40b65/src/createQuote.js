@@ -1,4 +1,5 @@
 const aws = require("aws-sdk");
+const validator = require("email-validator");
 const ses = new aws.SES({ region: process.env.REGION });
 
 const status = {
@@ -17,6 +18,14 @@ const createQuote = async (event) => {
     message,
   } = input;
 
+  if (!name || !email || !message) {
+    throw new Error("Missing required fields");
+  }
+
+  if (!validator.validate(email)) {
+    throw new Error("Email not valid");
+  }
+
   const recipientEmail = process.env.RECIPIENT_EMAIL;
   const body = `<div style="width: 100%">
     <h1 style="text-align:center">New Quote</h1>
@@ -25,12 +34,12 @@ const createQuote = async (event) => {
       <p>You have received a new quote from the web.</p>
     </div>
     <div>
-      <p><b>Name:</b>${name}</p>
-      <p><b>Email:</b>${email}</p>
-      ${addressLine ? `<p><b>Address Line:</b>${addressLine}</p>` : ""}
-      ${addressCity ? `<p><b>City:</b>${addressCity}</p>` : ""}
-      ${addressState ? `<p><b>State:</b>${addressState}</p>` : ""}
-      <p><b>Message:</b>${message}</p>
+      <p><b>Name: </b>${name}</p>
+      <p><b>Email: </b>${email}</p>
+      ${addressLine ? `<p><b>Address Line: </b>${addressLine}</p>` : ""}
+      ${addressCity ? `<p><b>City: </b>${addressCity}</p>` : ""}
+      ${addressState ? `<p><b>State: </b>${addressState}</p>` : ""}
+      <p><b>Message: </b>${message}</p>
     </div>
   </div>`;
   const sourceEmail = process.env.SOURCE_EMAIL;

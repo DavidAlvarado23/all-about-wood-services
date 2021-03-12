@@ -1,0 +1,116 @@
+/* ---------Page Subtitle--------- */
+h2 {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.subTitle {
+  font-family: "BioRhyme", serif;
+  font-size: 60px;
+}
+
+/* ---------Section Columns--------- */
+.quoteContainer {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.containerColumnLeft {
+  margin: 5% 10% 5% 20%;
+}
+
+.containerColumnRight {
+  margin: 7% 10% 5% 0;
+}
+
+/* ---------Left Column--------- */
+
+.ContactInfoContainer {
+  margin-top: 70px;
+}
+.ContactInfoContainer > div {
+  margin-bottom: 40px;
+}
+
+/* ---------Right Column--------- */
+
+.formContainer {
+  display: grid;
+  grid-template-rows: auto;
+
+  background: white;
+  width: 35vw;
+  border-radius: 15px;
+
+  padding: 7%;
+
+  box-shadow: 1px 0px 33px 15px rgba(0, 0, 0, 0.08);
+  -webkit-box-shadow: 1px 0px 33px 15px rgba(0, 0, 0, 0.08);
+  -moz-box-shadow: 1px 0px 33px 15px rgba(0, 0, 0, 0.08);
+}
+
+.formContainer input,
+.formElements label {
+  display: block;
+}
+
+.formElements label {
+  margin-bottom: 10px;
+  font-size: 1.2em;
+}
+
+.formElements input,
+.formElements textarea {
+  padding: 0.5em;
+  margin-bottom: 2em;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ---------Required Element Style--------- */
+
+.required {
+  color: red;
+}
+
+/* ---------Adress inputs--------- */
+
+.formAdressContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.formAdressContainer > input {
+  width: 45%;
+}
+
+/* ---------Submit Button--------- */
+
+.submitButton {
+  border: 0;
+  padding: 0.6em;
+  width: 180px;
+  float: right;
+  cursor: pointer;
+  background: #30647c;
+  color: #fff;
+  font-size: 20px;
+}
+
+.responseMessageError {
+  margin-top: 20px;
+  padding: 1em;
+  border-radius: 5px;
+  border: 1px solid red;
+  background-color: rgb(240, 166, 142);
+}
+
+.responseMessageSuccess {
+  margin-top: 20px;
+  padding: 1em;
+  border-radius: 5px;
+  border: 1px solid green;
+  background-color: darkseagreen;
+}

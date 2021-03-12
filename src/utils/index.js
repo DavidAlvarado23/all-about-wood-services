@@ -12,3 +12,8 @@ export const chunkArray = (arr = [], chunkCount) => {
 export const capitalize = (string) => {
   return string.charAt(0).toUpperCase() + string.slice(1);
 };
+
+export const socials = {
+  facebook:
+    "https://www.facebook.com/All-about-Wood-Service-KC-102386658266078",
+};
