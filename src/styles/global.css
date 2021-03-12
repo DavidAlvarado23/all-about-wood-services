@@ -29,6 +29,12 @@ div {
 
 p {
   font-family: "Rubik";
-  font-weight: 500;
-  line-height: 19px;
+  font-weight: 300;
+  /* line-height: 19px; */
+  font-size: 1.5em;
+}
+
+b {
+  font-family: "Rubik";
+  font-size: 1.5em;
 }
