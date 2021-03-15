@@ -1,5 +1,5 @@
 import * as React from "react";
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 import BackgroundImage from "gatsby-background-image";
 import Img from "gatsby-image";
 
@@ -86,10 +86,14 @@ const IndexPage = ({ data }) => {
             We are a company that was born with the desire to grow day by day,
             working as a team providing an excellent service to our clients.
           </p>
-          <div className={styles.aboutUsLearnMore}>
-            <p>Learn more</p>
+          <Link
+            className={styles.aboutUsLearnMore}
+            to={"/about"}
+            style={{ color: colors.white }}
+          >
+            <b>Learn more</b>
             <Img fixed={rightArrow} />
-          </div>
+          </Link>
         </div>
       </Section>
       <Footer />

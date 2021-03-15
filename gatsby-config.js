@@ -21,7 +21,14 @@ module.exports = {
       resolve: "gatsby-plugin-web-font-loader",
       options: {
         google: {
-          families: ["Arbutus Slab", "Rubik", "Rubik:500", "BioRhyme"],
+          families: [
+            "Arbutus Slab",
+            "Rubik",
+            "Rubik:500",
+            "Rubik:300",
+            "Rubik:700",
+            "BioRhyme",
+          ],
         },
         display: "swap",
       },

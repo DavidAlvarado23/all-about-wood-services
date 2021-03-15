@@ -48,7 +48,7 @@
   flex-direction: row;
   width: 100%;
   justify-content: space-around;
-  padding-top: 64px;
+  padding-top: 90px;
   padding-bottom: 64px;
 }
 
@@ -74,5 +74,7 @@
   flex-direction: row;
   gap: 20px;
   align-items: center;
-  font-weight: bold;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
 }
