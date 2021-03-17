@@ -12,9 +12,8 @@
   height: 45%;
   padding: 2vh 150px;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .logo {

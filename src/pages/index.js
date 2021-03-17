@@ -37,7 +37,7 @@ const IndexPage = ({ data }) => {
         <Header />
         <div className={styles.title}>
           <div style={{ marginBottom: 50 }}>
-            <h1>All About Wood Services</h1>
+            <h1 style={{ fontWeight: "bold" }}>All About Wood Services</h1>
             <h2 style={{ fontWeight: 800 }}>Kansas City, KS</h2>
           </div>
           <WoodButton showArrow linkTo={"/quote"}>

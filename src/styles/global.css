@@ -8,6 +8,13 @@ body,
   margin: 0px;
 }
 
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: content-box !important;
+  box-sizing: content-box !important;
+}
+
 body {
   margin: 0px;
 }

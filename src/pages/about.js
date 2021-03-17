@@ -2,7 +2,6 @@ import * as React from "react";
 import Img from "gatsby-image";
 import { graphql } from "gatsby";
 
-import BackgroundImage from "gatsby-background-image";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Section from "../components/Section";

@@ -1,6 +1,7 @@
 import React from "react";
 import Img from "gatsby-image";
 
+import { Media } from "../../utils/Media";
 import { colors } from "../../styles";
 import styles from "./index.module.css";
 
@@ -14,14 +15,39 @@ const Section = ({ rightImage, children }) => {
         background: `linear-gradient(0deg, ${rgba}, ${rgba})`,
       }}
     >
-      {rightImage ? (
-        <>
-          <div className={styles.leftPane}>{children}</div>
-          <Img className={styles.rightPane} fluid={rightImage} />
-        </>
-      ) : (
-        <>{children}</>
-      )}
+      <Media lessThan="md">
+        {(mediaClassNames, renderChildren) => {
+          return (
+            <div className={mediaClassNames} style={{ padding: 50 }}>
+              {renderChildren ? children : null}
+            </div>
+          );
+        }}
+      </Media>
+      <Media greaterThanOrEqual="md">
+        {(mediaClassNames, renderChildren) => {
+          return (
+            <div
+              className={mediaClassNames}
+              style={{
+                display: "flex",
+                flexDirection: "row",
+              }}
+            >
+              {renderChildren ? (
+                rightImage ? (
+                  <>
+                    <div className={styles.leftPane}>{children}</div>
+                    <Img className={styles.rightPane} fluid={rightImage} />
+                  </>
+                ) : (
+                  <>{children}</>
+                )
+              ) : null}
+            </div>
+          );
+        }}
+      </Media>
     </div>
   );
 };
