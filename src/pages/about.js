@@ -9,6 +9,7 @@ import Subtitle from "../components/Subtitle";
 import Title from "../components/Title";
 
 import styles from "../styles/about.module.css";
+import { Media } from "../utils/Media";
 import { colors } from "../styles";
 
 const About = ({ data }) => {
@@ -21,10 +22,10 @@ const About = ({ data }) => {
       <Header minified />
       <Title>About Us</Title>
       <div className={styles.aboutContainer}>
-        <div className={styles.aboutLeftColumn}>
+        <div className={styles.aboutFirstColumn}>
           <Img className={styles.image} fluid={aboutUsSectionImage} />
         </div>
-        <div className={styles.aboutRightColumn}>
+        <div className={styles.aboutSecondColumn}>
           <p>
             We are a company that was born with the desire to grow day by day,
             working as a team providing an excellent service to our clients.
