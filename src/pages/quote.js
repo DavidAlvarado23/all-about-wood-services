@@ -69,7 +69,7 @@ const Quote = ({ data }) => {
     <div>
       <Header minified />
       <section className={styles.quoteContainer}>
-        <div className={styles.containerColumnLeft}>
+        <div className={styles.introductionContainer}>
           <h2 className={styles.subTitle}>Get a quote</h2>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in
@@ -78,113 +78,113 @@ const Quote = ({ data }) => {
             facilisis euismod nulla, ut fermentum ex vulputate sit amet. Mauris
             dapibus lacus vel nibh maximus pellentesque.
           </p>
-          <div className={styles.ContactInfoContainer}>
-            <ContactInfo contactIcon={faPhone} isIcon>
-              <a href="tel:+1 913-230-4605">1-456-254-7410</a>
-            </ContactInfo>
-            <ContactInfo contactIcon={faEnvelope} isIcon>
-              <a href="mailto:jonnymn_12@hotmail.com">info@allaboutwood.com</a>
-            </ContactInfo>
-            <ContactInfo contactIcon={facebookLogo}>
-              <a href={socials.facebook} target="_blank" rel="noreferrer">
-                All About Wood Services KC
-              </a>
-            </ContactInfo>
-          </div>
         </div>
-        <div className={styles.containerColumnRight}>
-          <form onSubmit={handleSubmit} className={styles.formContainer}>
-            <div className={styles.formElements}>
-              <label htmlFor="name">
-                Name<span className={styles.required}>*</span>
-              </label>
-              <Input
-                id="name"
-                type="text"
-                value={formData.name}
-                name="name"
-                onChange={onFormChange}
-                required
-              />
+        <div className={styles.ContactInfoContainer}>
+          <h3 className={styles.getInTouchTitle}>Get in Touch</h3>
+          <ContactInfo contactIcon={faPhone} isIcon>
+            <a href="tel:+1 913-230-4605">1-456-254-7410</a>
+          </ContactInfo>
+          <ContactInfo contactIcon={faEnvelope} isIcon>
+            <a href="mailto:jonnymn_12@hotmail.com">info@allaboutwood.com</a>
+          </ContactInfo>
+          <ContactInfo contactIcon={facebookLogo}>
+            <a href={socials.facebook} target="_blank" rel="noreferrer">
+              All About Wood Services KC
+            </a>
+          </ContactInfo>
+        </div>
 
-              <label htmlFor="email">
-                Email<span className={styles.required}>*</span>
-              </label>
-              <Input
-                id="email"
-                type="email"
-                value={formData.email}
-                name="email"
-                onChange={onFormChange}
-                required
-              />
-              <label htmlFor="addressLine">Address</label>
-              <Input
-                id="addressLine"
-                type="text"
-                value={formData.addressLine}
-                name="addressLine"
-                onChange={onFormChange}
-                placeholder="Address Line"
-              />
+        <form onSubmit={handleSubmit} className={styles.formContainer}>
+          <div className={styles.formElements}>
+            <label htmlFor="name">
+              Name<span className={styles.required}>*</span>
+            </label>
+            <Input
+              id="name"
+              type="text"
+              value={formData.name}
+              name="name"
+              onChange={onFormChange}
+              required
+            />
 
-              <div className={styles.formAdressContainer}>
-                <Input
-                  type="text"
-                  value={formData.addressCity}
-                  name="addressCity"
-                  onChange={onFormChange}
-                  placeholder="City"
-                />
-                <Input
-                  type="text"
-                  value={formData.addressState}
-                  name="addressState"
-                  onChange={onFormChange}
-                  placeholder="State"
-                />
-              </div>
+            <label htmlFor="email">
+              Email<span className={styles.required}>*</span>
+            </label>
+            <Input
+              id="email"
+              type="email"
+              value={formData.email}
+              name="email"
+              onChange={onFormChange}
+              required
+            />
+            <label htmlFor="addressLine">Address</label>
+            <Input
+              id="addressLine"
+              type="text"
+              value={formData.addressLine}
+              name="addressLine"
+              onChange={onFormChange}
+              placeholder="Address Line"
+            />
 
-              <label htmlFor="message">
-                Message<span className={styles.required}>*</span>
-              </label>
-              <Input.TextArea
-                id="message"
+            <div className={styles.formAdressContainer}>
+              <Input
                 type="text"
-                value={formData.message}
-                name="message"
+                value={formData.addressCity}
+                name="addressCity"
                 onChange={onFormChange}
-                required
+                placeholder="City"
               />
-              <button
-                className={styles.submitButton}
-                type="submit"
-                disabled={loading}
-              >
-                {loading && (
-                  <FontAwesomeIcon
-                    icon={faSpinner}
-                    spin
-                    style={{ marginRight: 10 }}
-                  />
-                )}
-                Send
-              </button>
+              <Input
+                type="text"
+                value={formData.addressState}
+                name="addressState"
+                onChange={onFormChange}
+                placeholder="State"
+              />
             </div>
-            {message && message === "error" && (
-              <div className={styles.responseMessageError}>
-                Ups! There was an error sending the quote. Please try again or
-                contact with us, we'll be happy to hear from you.
-              </div>
-            )}
-            {message && message === "success" && (
-              <div className={styles.responseMessageSuccess}>
-                Thank you for sending the quote. We'll make contact with you in
-                the following days.
-              </div>
-            )}
-          </form>
-        </div>
+
+            <label htmlFor="message">
+              Message<span className={styles.required}>*</span>
+            </label>
+            <Input.TextArea
+              id="message"
+              type="text"
+              value={formData.message}
+              name="message"
+              onChange={onFormChange}
+              required
+            />
+            <button
+              className={styles.submitButton}
+              type="submit"
+              disabled={loading}
+            >
+              {loading && (
+                <FontAwesomeIcon
+                  icon={faSpinner}
+                  spin
+                  style={{ marginRight: 10 }}
+                />
+              )}
+              Send
+            </button>
+          </div>
+          {message && message === "error" && (
+            <div className={styles.responseMessageError}>
+              Ups! There was an error sending the quote. Please try again or
+              contact with us, we'll be happy to hear from you.
+            </div>
+          )}
+          {message && message === "success" && (
+            <div className={styles.responseMessageSuccess}>
+              Thank you for sending the quote. We'll make contact with you in
+              the following days.
+            </div>
+          )}
+        </form>
       </section>
       <Footer />
     </div>
