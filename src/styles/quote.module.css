@@ -17,6 +17,11 @@ html {
 }
 
 @media only screen and (max-width: 999px) {
+  .subTitle {
+    line-height: 40px;
+    margin-bottom: 25px;
+  }
+
   .quoteContainer {
     display: grid;
     grid-template-columns: 1fr;
@@ -30,7 +35,7 @@ html {
 
   .introductionContainer {
     grid-area: introduction;
-    padding-right: 100px;
+    padding-right: 30px;
     margin-bottom: 40px;
   }
 
@@ -49,6 +54,8 @@ html {
     -webkit-box-shadow: 1px 0px 33px 15px rgba(0, 0, 0, 0.08);
     -moz-box-shadow: 1px 0px 33px 15px rgba(0, 0, 0, 0.08);
     margin-bottom: 50px;
+
+    width: 75%;
   }
 
   .ContactInfoContainer {
@@ -59,6 +66,15 @@ html {
     margin-bottom: 24px;
     font-size: 40px;
   }
+
+  .formElements input,
+  .formElements textarea {
+    width: 95%;
+    padding: 0.5em;
+    margin-bottom: 2em;
+    box-sizing: border-box;
+  }
+
 }
 @media screen and (min-width: 1000px) {
   .quoteContainer {
@@ -98,6 +114,15 @@ html {
   .getInTouchTitle {
     display: none;
   }
+
+  .formElements input,
+  .formElements textarea {
+    padding: 0.5em;
+    margin-bottom: 2em;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
 }
 
 /* ---------Left Column--------- */
@@ -115,14 +140,6 @@ html {
 .formElements label {
   margin-bottom: 10px;
   font-size: 1.2em;
-}
-
-.formElements input,
-.formElements textarea {
-  padding: 0.5em;
-  margin-bottom: 2em;
-  width: 100%;
-  box-sizing: border-box;
 }
 
 /* ---------Required Element Style--------- */

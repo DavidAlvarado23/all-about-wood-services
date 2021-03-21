@@ -1,54 +1,48 @@
-import * as React from "react"
-import { Link } from "gatsby"
+import React from "react";
+import { graphql, Link } from "gatsby";
+import BackgroundImage from "gatsby-background-image";
 
-// styles
-const pageStyles = {
-  color: "#232129",
-  padding: "96px",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
+import WoodButton from "../components/WoodButton";
 
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
+const NotFoundPage = ({ data }) => {
+  const backgroundBanner = data.allFile.edges[0].node.childImageSharp.fluid;
 
-// markup
-const NotFoundPage = () => {
   return (
-    <main style={pageStyles}>
-      <title>Not found</title>
-      <h1 style={headingStyles}>Page not found</h1>
-      <p style={paragraphStyles}>
-        Sorry{" "}
-        <span role="img" aria-label="Pensive emoji">
-          😔
-        </span>{" "}
-        we couldn’t find what you were looking for.
-        <br />
-        {process.env.NODE_ENV === "development" ? (
-          <>
-            <br />
-            Try creating a page in <code style={codeStyles}>src/pages/</code>.
-            <br />
-          </>
-        ) : null}
-        <br />
-        <Link to="/">Go home</Link>.
-      </p>
-    </main>
-  )
-}
+    <BackgroundImage
+      style={{
+        height: "100vh",
+        display: "flex",
+      }}
+      fluid={backgroundBanner}
+      preserveStackingContext
+    >
+      <div
+        style={{ display: "flex", flexDirection: "column", padding: "20vh 10%" }}
+      >
+        <h1 style={{ fontSize: "5em", margin: 0 }}>404</h1>
+        <h2 style={{ fontSize: "4em", margin: 0 }}>Page not found.</h2>
+        <WoodButton isButton linkTo="/" style={{ margin: 0, marginTop: 20 }}>
+          Back to home
+        </WoodButton>
+      </div>
+    </BackgroundImage>
+  );
+};
 
-export default NotFoundPage
+export const query = graphql`
+  query {
+    allFile(filter: { relativePath: { eq: "banner_filter.png" } }) {
+      edges {
+        node {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
+export default NotFoundPage;

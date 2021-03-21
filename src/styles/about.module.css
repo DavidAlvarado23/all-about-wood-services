@@ -20,6 +20,8 @@
   }
 
   .aboutSecondColumn {
+    display: flex;
+    align-items: center;
     padding: 8%;
     padding-right: 15%;
   }
@@ -39,6 +41,8 @@
   }
 
   .aboutSecondColumn {
+    display: flex;
+    align-items: center;
     padding: 8%;
     padding-right: 15%;
   }

@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import Img from "gatsby-image";
 import { graphql } from "gatsby";
 
@@ -33,19 +33,21 @@ const About = ({ data }) => {
         </div>
       </div>
       <Section rightImage={sectionRightImage}>
-        <Subtitle>Mission</Subtitle>
-        <div style={{ color: colors.white }}>
-          <p>
-            Reach the expectations of each of our clients in each job. Maintain
-            teamwork to grow day by day.
-          </p>
-        </div>
-        <Subtitle>Vision</Subtitle>
-        <div style={{ color: colors.white }}>
-          <p>
-            Being a recognized company in the Kansas City area, because of our
-            responsibility, commitment, and honesty.
-          </p>
+        <div>
+          <Subtitle>Mission</Subtitle>
+          <div style={{ color: colors.white }}>
+            <p>
+              Reach the expectations of each of our clients in each job.
+              Maintain teamwork to grow day by day.
+            </p>
+          </div>
+          <Subtitle>Vision</Subtitle>
+          <div style={{ color: colors.white }}>
+            <p>
+              Being a recognized company in the Kansas City area, because of our
+              responsibility, commitment, and honesty.
+            </p>
+          </div>
         </div>
       </Section>
 

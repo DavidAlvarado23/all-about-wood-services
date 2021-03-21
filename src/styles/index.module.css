@@ -60,6 +60,16 @@
   text-shadow: 4px 4px 15px rgba(125, 96, 57, 0.75);
 }
 
+@media only screen and (max-width: 1000px) {
+  .ourServices {
+    padding: 90px 10px 100px 10px;
+  }
+
+  .ourServicesTitle {
+    font-size: clamp(2.5rem, -0.875rem + 8.333333vw, 3.5rem);
+  }
+}
+
 .carousel {
   display: flex;
   flex-direction: row;
@@ -83,6 +93,9 @@
 
 .aboutUsTextContainer {
   flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   padding: 3rem 70px 3rem 1rem;
 }
 

@@ -3,6 +3,7 @@ import { useStaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
 import BackgroundImage from "gatsby-background-image";
 
+import { Media } from "../../utils/Media";
 import styles from "./index.module.css";
 import { socials } from "../../utils";
 
@@ -52,7 +53,15 @@ const Footer = () => {
         preserveStackingContext
       >
         <div className={styles.footerContainer}>
-          <div>© 2021 All About Wood Services | All right reserved</div>
+          <Media lessThan="md">
+            <div className={styles.text}>
+              © 2021 All About Wood Services
+              <br /> All right reserved
+            </div>
+          </Media>
+          <Media greaterThanOrEqual="md">
+            <div>© 2021 All About Wood Services | All right reserved</div>
+          </Media>
           <div className={styles.snContainer}>
             <a href={socials.facebook} target="_blank" rel="noreferrer">
               <Img fixed={facebookLogo} />
