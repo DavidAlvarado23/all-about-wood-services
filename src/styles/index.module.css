@@ -60,6 +60,16 @@
   text-shadow: 4px 4px 15px rgba(125, 96, 57, 0.75);
 }
 
+@media only screen and (max-height: 1000px) {
+  .ourServices {
+    padding: 90px 0px 100px 0px;
+  }
+
+  .ourServicesTitle {
+    font-size: clamp(2.5rem, -0.875rem + 8.333333vw, 3rem);
+  }
+}
+
 .carousel {
   display: flex;
   flex-direction: row;

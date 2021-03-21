@@ -2,6 +2,7 @@ import * as React from "react";
 import { graphql, Link } from "gatsby";
 import BackgroundImage from "gatsby-background-image";
 import Img from "gatsby-image";
+import { Carousel } from "antd";
 
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -13,6 +14,7 @@ import ServiceImage from "../components/ServiceImage";
 import styles from "../styles/index.module.css";
 import { colors } from "../styles";
 import { capitalize } from "../utils";
+import { Media } from "../utils/Media";
 
 const IndexPage = ({ data }) => {
   const backgroundBanner = data.allFile.edges[0].node.childImageSharp.fluid;
@@ -64,11 +66,26 @@ const IndexPage = ({ data }) => {
         <WoodButton isButton={false} style={{ padding: 0, maxWidth: "40rem" }}>
           <h2 className={styles.ourServicesTitle}>Our Services</h2>
         </WoodButton>
-        <div className={styles.carousel}>
-          {carouselImages.map((service) => (
-            <ServiceImage image={service.image} title={service.title} />
-          ))}
-        </div>
+        <Media lessThan="md">
+          <Carousel
+            autoplay
+            dots={false}
+            style={{ paddingTop: 90, paddingBottom: 64 }}
+          >
+            {carouselImages.map((service) => (
+              <div>
+                <ServiceImage image={service.image} title={service.title} />
+              </div>
+            ))}
+          </Carousel>
+        </Media>
+        <Media greaterThanOrEqual="md">
+          <div className={styles.carousel}>
+            {carouselImages.map((service) => (
+              <ServiceImage image={service.image} title={service.title} />
+            ))}
+          </div>
+        </Media>
         <WoodButton showArrow linkTo={"/services"}>
           Check all our services
         </WoodButton>
