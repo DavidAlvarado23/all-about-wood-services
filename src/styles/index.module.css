@@ -19,6 +19,7 @@
   letter-spacing: -0.04em;
   text-shadow: 4px 4px 15px #7d6039;
   margin-bottom: 20px;
+  padding: 0px 10px;
 }
 
 .title h2 {
@@ -29,6 +30,22 @@
   line-height: 53px;
   text-align: center;
   padding: 0px 18vw;
+}
+
+@media only screen and (max-height: 900px) {
+  .title {
+    top: 55%;
+  }
+
+  .title h1 {
+    font-size: clamp(4.5rem, -0.875rem + 8.333333vw, 7.8rem);
+    line-height: 80px;
+  }
+
+  .title h2 {
+    padding: 0px;
+    font-size: clamp(1.5rem, -0.875rem + 8.333333vw, 2.5rem);
+  }
 }
 
 .ourServices {

@@ -3,8 +3,21 @@
   line-height: 26px;
   letter-spacing: -0.02em;
   font-weight: 700;
-  font-size: 1.25em;
+  font-size: 20px;
   text-decoration: none;
+}
+
+.headerMenuItemVertical {
+  font-family: "Rubik";
+  line-height: 40px;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  font-size: 2.5em;
+  text-decoration: none;
+  margin-bottom: 25px;
+
+  display: flex;
+  flex-direction: row;
 }
 
 .headerMenuItem:not(:first-child) {

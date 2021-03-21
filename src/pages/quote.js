@@ -7,10 +7,11 @@ import {
   faEnvelope,
 } from "@fortawesome/free-solid-svg-icons";
 import Amplify, { API, graphqlOperation } from "aws-amplify";
+import { Input } from "antd";
 
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import ContactInfo from "../components/contactInfo";
+import ContactInfo from "../components/ContactInfo";
 
 import styles from "../styles/quote.module.css";
 import awsconfig from "../aws-exports";
@@ -85,7 +86,7 @@ const Quote = ({ data }) => {
               <a href="mailto:jonnymn_12@hotmail.com">info@allaboutwood.com</a>
             </ContactInfo>
             <ContactInfo contactIcon={facebookLogo}>
-              <a href={socials.facebook} target="_blank">
+              <a href={socials.facebook} target="_blank" rel="noreferrer">
                 All About Wood Services KC
               </a>
             </ContactInfo>
@@ -94,10 +95,11 @@ const Quote = ({ data }) => {
         <div className={styles.containerColumnRight}>
           <form onSubmit={handleSubmit} className={styles.formContainer}>
             <div className={styles.formElements}>
-              <label>
+              <label htmlFor="name">
                 Name<span className={styles.required}>*</span>
               </label>
-              <input
+              <Input
+                id="name"
                 type="text"
                 value={formData.name}
                 name="name"
@@ -105,33 +107,36 @@ const Quote = ({ data }) => {
                 required
               />
 
-              <label>
+              <label htmlFor="email">
                 Email<span className={styles.required}>*</span>
               </label>
-              <input
+              <Input
+                id="email"
                 type="email"
                 value={formData.email}
                 name="email"
                 onChange={onFormChange}
                 required
               />
-              <label>Address</label>
-              <input
+              <label htmlFor="addressLine">Address</label>
+              <Input
+                id="addressLine"
                 type="text"
                 value={formData.addressLine}
                 name="addressLine"
+                onChange={onFormChange}
                 placeholder="Address Line"
               />
 
               <div className={styles.formAdressContainer}>
-                <input
+                <Input
                   type="text"
                   value={formData.addressCity}
                   name="addressCity"
                   onChange={onFormChange}
                   placeholder="City"
                 />
-                <input
+                <Input
                   type="text"
                   value={formData.addressState}
                   name="addressState"
@@ -140,10 +145,11 @@ const Quote = ({ data }) => {
                 />
               </div>
 
-              <label>
+              <label htmlFor="message">
                 Message<span className={styles.required}>*</span>
               </label>
-              <textarea
+              <Input.TextArea
+                id="message"
                 type="text"
                 value={formData.message}
                 name="message"
