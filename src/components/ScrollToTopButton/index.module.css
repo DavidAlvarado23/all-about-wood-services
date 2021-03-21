@@ -11,4 +11,9 @@
   padding: 15px;
   border-radius: 50px;
   font-size: 18px;
+  height: 23px;
+  width: 23px;
+
+  align-items: center;
+  justify-content: center;
 }

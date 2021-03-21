@@ -32,6 +32,7 @@ const Section = ({ rightImage, children }) => {
               style={{
                 display: "flex",
                 flexDirection: "row",
+                width: "100%",
               }}
             >
               {renderChildren ? (
