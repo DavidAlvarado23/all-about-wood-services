@@ -15,6 +15,7 @@ import styles from "../styles/index.module.css";
 import { colors } from "../styles";
 import { capitalize } from "../utils";
 import { Media } from "../utils/Media";
+import SEO from "../components/SEO";
 
 const IndexPage = ({ data }) => {
   const backgroundBanner = data.allFile.edges[0].node.childImageSharp.fluid;
@@ -31,6 +32,7 @@ const IndexPage = ({ data }) => {
 
   return (
     <div>
+      <SEO title="Home" />
       <BackgroundImage
         className={styles.backgroundBanner}
         fluid={backgroundBanner}

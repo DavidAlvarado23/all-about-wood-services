@@ -12,6 +12,7 @@ import { Input } from "antd";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import ContactInfo from "../components/ContactInfo";
+import SEO from "../components/SEO";
 
 import styles from "../styles/quote.module.css";
 import awsconfig from "../aws-exports";
@@ -64,16 +65,20 @@ const Quote = ({ data }) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  console.log({ loading });
   return (
     <div>
+      <SEO
+        title="Quote"
+        description="Get a free quote filling the form with your personal data and we'll
+            get in touch with you in the following business days"
+      />
       <Header minified />
       <section className={styles.quoteContainer}>
         <div className={styles.introductionContainer}>
           <h2 className={styles.subTitle}>Get a quote</h2>
           <p>
             Get a free quote filling the form with your personal data and we'll
-            get in touch with you in the following business days
+            get in touch with you in the following business days.
           </p>
         </div>
         <div className={styles.ContactInfoContainer}>
