@@ -50,6 +50,7 @@ const Quote = ({ data }) => {
       );
 
       if (response && response.data.createQuote.status === "SUCCESS") {
+        setFormData(formState);
         setMessage("success");
       } else {
         setMessage("error");
