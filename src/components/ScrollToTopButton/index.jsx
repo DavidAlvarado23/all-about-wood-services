@@ -56,6 +56,9 @@ const ScrollToTopButton = () => {
       className={styles.button}
       style={{ display: buttonDisplay, backgroundColor: colors.primary.hex }}
       onClick={toTop}
+      onKeyPress={() => null}
+      role="button"
+      tabIndex="0"
     >
       <Img fixed={arrow} />
     </div>

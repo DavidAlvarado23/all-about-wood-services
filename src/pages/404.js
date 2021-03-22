@@ -1,5 +1,5 @@
 import React from "react";
-import { graphql, Link } from "gatsby";
+import { graphql } from "gatsby";
 import BackgroundImage from "gatsby-background-image";
 
 import WoodButton from "../components/WoodButton";
@@ -17,7 +17,11 @@ const NotFoundPage = ({ data }) => {
       preserveStackingContext
     >
       <div
-        style={{ display: "flex", flexDirection: "column", padding: "20vh 10%" }}
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          padding: "20vh 10%",
+        }}
       >
         <h1 style={{ fontSize: "5em", margin: 0 }}>404</h1>
         <h2 style={{ fontSize: "4em", margin: 0 }}>Page not found.</h2>

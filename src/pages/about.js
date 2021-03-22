@@ -9,7 +9,6 @@ import Subtitle from "../components/Subtitle";
 import Title from "../components/Title";
 
 import styles from "../styles/about.module.css";
-import { Media } from "../utils/Media";
 import { colors } from "../styles";
 
 const About = ({ data }) => {
