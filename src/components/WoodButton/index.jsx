@@ -77,7 +77,7 @@ const WoodButton = ({
         <Img fixed={screw} />
         {children}
         <>
-          {showArrow && <Img fixed={rightArrow} />}
+          {showArrow && <Img fixed={rightArrow} style={{ marginRight: 5 }} />}
           <Img fixed={screw} />
         </>
       </Link>

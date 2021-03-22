@@ -72,11 +72,8 @@ const Quote = ({ data }) => {
         <div className={styles.introductionContainer}>
           <h2 className={styles.subTitle}>Get a quote</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in
-            urna magna. Etiam orci augue, gravida eu tempus eget, vehicula in
-            tellus. Maecenas in efficitur metus, sed venenatis lectus. Ut
-            facilisis euismod nulla, ut fermentum ex vulputate sit amet. Mauris
-            dapibus lacus vel nibh maximus pellentesque.
+            Get a free quote filling the form with your personal data and we'll
+            get in touch with you in the following business days
           </p>
         </div>
         <div className={styles.ContactInfoContainer}>

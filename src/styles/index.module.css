@@ -32,6 +32,12 @@
   padding: 0px 18vw;
 }
 
+@media only screen and (max-height: 400px) {
+  .backgroundBanner {
+    min-height: 150vh;
+  }
+}
+
 @media only screen and (max-height: 900px) {
   .title {
     top: 55%;
@@ -49,7 +55,7 @@
 }
 
 .ourServices {
-  padding: 90px 100px 70px 100px;
+  padding: 125px 100px 125px 100px;
 }
 
 .ourServicesTitle {
@@ -76,7 +82,7 @@
   width: 100%;
   justify-content: space-around;
   padding-top: 90px;
-  padding-bottom: 64px;
+  padding-bottom: 90px;
 }
 
 .aboutUsImageContainer {
