@@ -7,9 +7,9 @@ import Footer from "../components/Footer";
 import Section from "../components/Section";
 import Subtitle from "../components/Subtitle";
 import Title from "../components/Title";
+import SEO from "../components/SEO";
 
 import styles from "../styles/about.module.css";
-import { Media } from "../utils/Media";
 import { colors } from "../styles";
 
 const About = ({ data }) => {
@@ -17,8 +17,14 @@ const About = ({ data }) => {
     data.sectionRightImage.edges[0].node.childImageSharp.fluid;
   const aboutUsSectionImage =
     data.aboutUsSectionImage.edges[0].node.childImageSharp.fluid;
+
   return (
     <div>
+      <SEO
+        title="About"
+        description="We are a company that was born with the desire to grow day by day,
+        working as a team providing an excellent service to our clients."
+      />
       <Header minified />
       <Title>About Us</Title>
       <div className={styles.aboutContainer}>

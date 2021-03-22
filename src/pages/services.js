@@ -5,8 +5,9 @@ import { graphql } from "gatsby";
 import styles from "../styles/services.module.css";
 import Title from "../components/Title";
 import Header from "../components/Header";
-import Footer from "../components/Footer"
+import Footer from "../components/Footer";
 import ScrollToTopButton from "../components/ScrollToTopButton";
+import SEO from "../components/SEO";
 
 import { chunkArray } from "../utils";
 
@@ -38,6 +39,10 @@ const Services = ({ data }) => {
 
   return (
     <>
+      <SEO
+        title="Services"
+        description="A list of images showing our different services and works done."
+      />
       <Header minified />
       <Title>Our Services</Title>
       <div className={styles.imageList}>
