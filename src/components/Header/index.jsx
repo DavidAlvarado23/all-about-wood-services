@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useStaticQuery, graphql } from "gatsby";
+import { useStaticQuery, graphql, Link } from "gatsby";
 import Img from "gatsby-image";
 import BackgroundImage from "gatsby-background-image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -76,10 +76,12 @@ const Header = ({ minified }) => {
                     }}
                     onClick={() => setDrawerVisible(true)}
                   />
-                  <Img
-                    className={styles.logo}
-                    fluid={data.allFile.edges[0].node.childImageSharp.fluid}
-                  />
+                  <Link to="/">
+                    <Img
+                      className={styles.logo}
+                      fluid={data.allFile.edges[0].node.childImageSharp.fluid}
+                    />
+                  </Link>
                 </>
               ) : null}
             </div>
@@ -100,10 +102,12 @@ const Header = ({ minified }) => {
             >
               {renderChildren ? (
                 <>
-                  <Img
-                    className={styles.logo}
-                    fluid={data.allFile.edges[0].node.childImageSharp.fluid}
-                  />
+                  <Link to="/">
+                    <Img
+                      className={styles.logo}
+                      fluid={data.allFile.edges[0].node.childImageSharp.fluid}
+                    />
+                  </Link>
                   <div className={styles.menu}>
                     <HeaderMenuItem linkTo={"/"}>Home</HeaderMenuItem>
                     <HeaderMenuItem linkTo={"/services"}>
