@@ -91,15 +91,9 @@ const IndexPage = ({ data }) => {
         </WoodButton>
       </BackgroundImage>
       <Section>
-        <div className={styles.aboutUsImageContainer}>
-          <Img fluid={aboutUsImage} className={styles.aboutUsImage} />
-        </div>
-        <div
-          className={styles.aboutUsTextContainer}
-          style={{ color: colors.white }}
-        >
+        <Media lessThan="md">
           <Subtitle>About us</Subtitle>
-          <p>
+          <p style={{ color: colors.white }}>
             We are a company that was born with the desire to grow day by day,
             working as a team providing an excellent service to our clients.
           </p>
@@ -111,7 +105,55 @@ const IndexPage = ({ data }) => {
             <b>Learn more</b>
             <Img fixed={rightArrow} />
           </Link>
-        </div>
+        </Media>
+        <Media greaterThanOrEqual="md">
+          {(mediaClassNames, renderChildren) => {
+            return (
+              <div
+                className={mediaClassNames}
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  width: "100%",
+                  paddingTop: "40px",
+                  paddingBottom: "40px",
+                }}
+              >
+                {renderChildren ? (
+                  <>
+                    <div className={styles.aboutUsImageContainer}>
+                      <Img
+                        fluid={aboutUsImage}
+                        className={styles.aboutUsImage}
+                      />
+                    </div>
+                    <div
+                      className={styles.aboutUsTextContainer}
+                      style={{ color: colors.white }}
+                    >
+                      <Subtitle>About us</Subtitle>
+                      <p>
+                        We are a company that was born with the desire to grow
+                        day by day, working as a team providing an excellent
+                        service to our clients.
+                      </p>
+                      <Link
+                        className={styles.aboutUsLearnMore}
+                        to={"/about"}
+                        style={{ color: colors.white }}
+                      >
+                        <b>Learn more</b>
+                        <Img fixed={rightArrow} />
+                      </Link>
+                    </div>
+                  </>
+                ) : null}
+              </div>
+            );
+          }}
+        </Media>
       </Section>
       <Footer />
     </div>

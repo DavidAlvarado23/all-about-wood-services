@@ -31,13 +31,15 @@
   .aboutContainer {
     display: grid;
     grid-template-columns: 50% 50%;
-    margin-bottom: 80px;
+    margin-top: 80px;
+    margin-bottom: 120px;
   }
 
   .aboutFirstColumn {
     display: flex;
     max-height: 400px;
     justify-content: right;
+    margin-left: 50px;
   }
 
   .aboutSecondColumn {

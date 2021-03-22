@@ -5,6 +5,7 @@
   font-weight: 700;
   font-size: 20px;
   text-decoration: none;
+  text-transform: uppercase;
 }
 
 .headerMenuItemVertical {
@@ -21,7 +22,7 @@
 }
 
 .headerMenuItem:not(:first-child) {
-  margin-left: 78px;
+  margin-left: 55px;
 }
 
 .hr {

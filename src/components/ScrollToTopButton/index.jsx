@@ -32,7 +32,7 @@ const ScrollToTopButton = () => {
   const [container, setContainer] = useState();
 
   const onScroll = useCallback(() => {
-    setButtonDisplay(container && container.scrollTop > 20 ? "block" : "none");
+    setButtonDisplay(container && container.scrollTop > 20 ? "flex" : "none");
   }, [container]);
 
   useEffect(() => {

@@ -25,6 +25,7 @@ const HeaderMenuItem = ({ linkTo, children, vertical }) => {
             width: 5,
             marginRight: 10,
             backgroundColor: active ? colors.white : colors.primary.hex,
+            borderRadius: 15,
           }}
         />
         {children}

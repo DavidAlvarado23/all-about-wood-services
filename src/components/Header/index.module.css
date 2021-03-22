@@ -10,7 +10,7 @@
 
 .headerContainer {
   height: 45%;
-  padding: 2vh 150px;
+  padding: 2vh 100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -19,6 +19,13 @@
 .logo {
   min-width: 118px;
   min-height: 90px;
+}
+
+@media only screen and (max-height: 400px) {
+  .logo {
+    min-width: 70px;
+    min-height: 55px;
+  }
 }
 
 .menu {
