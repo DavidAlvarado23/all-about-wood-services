@@ -21,8 +21,8 @@ const Header = ({ minified }) => {
             childImageSharp {
               fluid(
                 rotate: 90
-                maxWidth: 160
-                maxHeight: 90
+                maxWidth: 640
+                maxHeight: 360
                 fit: CONTAIN
                 quality: 100
               ) {

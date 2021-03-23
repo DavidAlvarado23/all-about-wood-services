@@ -60,7 +60,9 @@ const Footer = () => {
             </div>
           </Media>
           <Media greaterThanOrEqual="md">
-            <div>© 2021 All About Wood Services | All right reserved</div>
+            <div className={styles.text}>
+              © 2021 All About Wood Services | All right reserved
+            </div>
           </Media>
           <div className={styles.snContainer}>
             <a href={socials.facebook} target="_blank" rel="noreferrer">
