@@ -32,7 +32,7 @@ const Footer = () => {
         edges {
           node {
             childImageSharp {
-              fluid {
+              fluid(maxWidth: 3080, quality: 100) {
                 ...GatsbyImageSharpFluid_noBase64
               }
             }

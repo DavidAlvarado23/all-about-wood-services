@@ -76,7 +76,7 @@ const Quote = ({ data }) => {
       <Header minified />
       <section className={styles.quoteContainer}>
         <div className={styles.introductionContainer}>
-          <h2 className={styles.subTitle}>Get a quote</h2>
+          <h2 className={styles.subTitle}>Get a Quote</h2>
           <p>
             Get a free quote filling the form with your personal data and we'll
             get in touch with you in the following business days.

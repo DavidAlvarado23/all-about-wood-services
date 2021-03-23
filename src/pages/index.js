@@ -168,7 +168,7 @@ export const query = graphql`
       edges {
         node {
           childImageSharp {
-            fluid {
+            fluid(quality: 100, maxWidth: 3080) {
               ...GatsbyImageSharpFluid
             }
           }
@@ -182,7 +182,7 @@ export const query = graphql`
       edges {
         node {
           childImageSharp {
-            fluid(fit: CONTAIN, maxHeight: 700, jpegQuality: 100) {
+            fluid(fit: CONTAIN, maxHeight: 3080, quality: 100) {
               ...GatsbyImageSharpFluid_noBase64
             }
           }
@@ -209,7 +209,7 @@ export const query = graphql`
       edges {
         node {
           childImageSharp {
-            fluid(fit: CONTAIN) {
+            fluid(fit: CONTAIN, quality: 100, maxWidth: 3080) {
               ...GatsbyImageSharpFluid
             }
           }

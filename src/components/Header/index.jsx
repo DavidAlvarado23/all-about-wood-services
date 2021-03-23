@@ -24,7 +24,7 @@ const Header = ({ minified }) => {
                 maxWidth: 160
                 maxHeight: 90
                 fit: CONTAIN
-                pngQuality: 90
+                quality: 100
               ) {
                 ...GatsbyImageSharpFluid_noBase64
               }
@@ -39,7 +39,7 @@ const Header = ({ minified }) => {
         edges {
           node {
             childImageSharp {
-              fluid(pngQuality: 100, fit: CONTAIN) {
+              fluid(quality: 100, fit: CONTAIN, maxWidth: 3080) {
                 ...GatsbyImageSharpFluid
               }
             }
