@@ -65,14 +65,14 @@ const WoodButton = ({
       preserveStackingContext
       style={{
         background: `linear-gradient(0deg, ${rgba}, ${rgba})`,
-        cursor: isButton ? "pointer" : null,
+        cursor: isButton ? "pointer" : "auto",
         ...style,
       }}
     >
       <Link
         to={linkTo}
         className={styles.content}
-        style={{ color: colors.black }}
+        style={{ color: colors.black, cursor: isButton ? "pointer" : "auto" }}
       >
         <Img fixed={screw} />
         {children}
