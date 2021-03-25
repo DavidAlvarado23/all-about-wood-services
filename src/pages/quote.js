@@ -23,6 +23,7 @@ Amplify.configure(awsconfig);
 
 const Quote = ({ data }) => {
   const facebookLogo = data.allFile.edges[0].node.childImageSharp.fixed;
+  const instagramLogo = data.allFile.edges[1].node.childImageSharp.fixed;
 
   const formState = {
     name: "",
@@ -85,13 +86,18 @@ const Quote = ({ data }) => {
         <div className={styles.ContactInfoContainer}>
           <h3 className={styles.getInTouchTitle}>Get in Touch</h3>
           <ContactInfo contactIcon={faPhone} isIcon>
-            <a href="tel:+1 913-230-4605">1-456-254-7410</a>
+            <a href="tel:+1 913-401-9400">+1 913-401-9400</a>
           </ContactInfo>
           <ContactInfo contactIcon={faEnvelope} isIcon>
-            <a href="mailto:jonnymn_12@hotmail.com">info@allaboutwood.com</a>
+            <a href="mailto:jonnymn_12@hotmail.com">jonnymn_12@hotmail.com</a>
           </ContactInfo>
           <ContactInfo contactIcon={facebookLogo}>
             <a href={socials.facebook} target="_blank" rel="noreferrer">
+              All About Wood Services KC
+            </a>
+          </ContactInfo>
+          <ContactInfo contactIcon={instagramLogo}>
+            <a href={socials.instagram} target="_blank" rel="noreferrer">
               All About Wood Services KC
             </a>
           </ContactInfo>
@@ -204,7 +210,7 @@ export const query = graphql`
       edges {
         node {
           childImageSharp {
-            fixed(width: 35, height: 35) {
+            fixed(width: 35, height: 35, quality: 100) {
               ...GatsbyImageSharpFixed
             }
           }

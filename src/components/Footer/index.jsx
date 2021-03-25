@@ -68,11 +68,7 @@ const Footer = () => {
             <a href={socials.facebook} target="_blank" rel="noreferrer">
               <Img fixed={facebookLogo} />
             </a>
-            <a
-              href="https://www.instagram.com"
-              target="_blank"
-              rel="noreferrer"
-            >
+            <a href={socials.instagram} target="_blank" rel="noreferrer">
               <Img style={{ marginLeft: 30 }} fixed={instagramLogo} />
             </a>
           </div>

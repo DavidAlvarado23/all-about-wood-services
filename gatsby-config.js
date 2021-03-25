@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: "All About Wood Services",
     siteUrl: "https://master.d212siyu2nt6mf.amplifyapp.com/",
-    author: "David Alvarado"
+    author: "David Alvarado",
   },
   plugins: [
     "gatsby-plugin-sharp",
@@ -33,6 +33,18 @@ module.exports = {
           ],
         },
         display: "swap",
+      },
+    },
+    {
+      resolve: "gatsby-plugin-manifest",
+      options: {
+        name: "All About Wood Services",
+        short_name: "All About Wood Services",
+        start_url: "/",
+        background_color: "#7D6039",
+        theme_color: "#7D6039",
+        display: "standalone",
+        icon: "src/images/logo.png",
       },
     },
   ],
