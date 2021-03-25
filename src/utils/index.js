@@ -16,4 +16,5 @@ export const capitalize = (string) => {
 export const socials = {
   facebook:
     "https://www.facebook.com/All-about-Wood-Service-KC-102386658266078",
+  instagram: "https://www.instagram.com/allaboutwoodserviceskc",
 };

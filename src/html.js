@@ -13,6 +13,17 @@ export default function HTML(props) {
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
+        <meta
+          name="description"
+          content="Our company it is dedicated in repair rotted wood around windows,
+          facias, soffits, doors, and anything made of wood. Our services also
+          include painting, priming, and caulking, we bring all our services
+          in the area of Kansas City."
+        />
+        <meta
+          name="keywords"
+          content="Wood Services, Services, Kansas City, Wood, Company"
+        />
 
         {/* Inject @artsy/fresnel styles in to the head */}
         <style>{mediaStyles}</style>
