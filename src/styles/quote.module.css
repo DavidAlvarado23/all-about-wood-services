@@ -155,7 +155,15 @@ html {
   padding: 0.2em;
   width: 180px;
   float: right;
+  background-color: #3494c9;
   cursor: pointer;
   color: #fff;
   font-size: 18px;
+}
+
+.submitButton:hover,
+.submitButton:focus,
+.submitButton:active {
+  background-color: #3e9fd3;
+  color: #fff;
 }
