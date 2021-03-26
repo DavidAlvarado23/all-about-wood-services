@@ -29,7 +29,11 @@ const About = ({ data }) => {
       <Title>About Us</Title>
       <div className={styles.aboutContainer}>
         <div className={styles.aboutFirstColumn}>
-          <Img className={styles.image} fluid={aboutUsSectionImage} />
+          <Img
+            className={styles.image}
+            fluid={aboutUsSectionImage}
+            alt="About Us"
+          />
         </div>
         <div className={styles.aboutSecondColumn}>
           <p>

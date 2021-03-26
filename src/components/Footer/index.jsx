@@ -66,10 +66,14 @@ const Footer = () => {
           </Media>
           <div className={styles.snContainer}>
             <a href={socials.facebook} target="_blank" rel="noreferrer">
-              <Img fixed={facebookLogo} />
+              <Img fixed={facebookLogo} alt="Facebook Logo" />
             </a>
             <a href={socials.instagram} target="_blank" rel="noreferrer">
-              <Img style={{ marginLeft: 30 }} fixed={instagramLogo} />
+              <Img
+                style={{ marginLeft: 30 }}
+                fixed={instagramLogo}
+                alt="Instagram Logo"
+              />
             </a>
           </div>
         </div>

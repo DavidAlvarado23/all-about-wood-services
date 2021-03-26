@@ -9,7 +9,7 @@ const contactInfo = ({ contactIcon, children, isIcon }) => {
       {isIcon ? (
         <FontAwesomeIcon icon={contactIcon} size="2x" />
       ) : (
-        <Img fixed={contactIcon} className={styles.icon} />
+        <Img fixed={contactIcon} className={styles.icon} alt="Contact Icon" />
       )}
 
       {children}

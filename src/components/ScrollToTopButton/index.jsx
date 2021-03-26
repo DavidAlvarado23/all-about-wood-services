@@ -60,7 +60,7 @@ const ScrollToTopButton = () => {
       role="button"
       tabIndex="0"
     >
-      <Img fixed={arrow} />
+      <Img fixed={arrow} alt="Arrow" />
     </div>
   );
 };

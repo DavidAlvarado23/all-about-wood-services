@@ -74,11 +74,11 @@ const WoodButton = ({
         className={styles.content}
         style={{ color: colors.black, cursor: isButton ? "pointer" : "auto" }}
       >
-        <Img fixed={screw} />
+        <Img fixed={screw} alt="Screw" />
         {children}
         <>
           {showArrow && <Img fixed={rightArrow} style={{ marginRight: 5 }} />}
-          <Img fixed={screw} />
+          <Img fixed={screw} alt="Screw" />
         </>
       </Link>
     </BackgroundImage>

@@ -49,7 +49,11 @@ const Services = ({ data }) => {
         {imageLayout.map((column, i) => (
           <div key={i} className={styles.imageListColumn}>
             {column.map((image, i) => (
-              <Img key={`Image${i}`} fluid={image} />
+              <Img
+                key={`Image${i}`}
+                fluid={image}
+                alt={`Service Gallery ${i}`}
+              />
             ))}
           </div>
         ))}
