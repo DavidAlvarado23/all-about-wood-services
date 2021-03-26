@@ -105,7 +105,7 @@ const IndexPage = ({ data }) => {
             style={{ color: colors.white }}
           >
             <b>Learn more</b>
-            <Img fixed={rightArrow} />
+            <Img fixed={rightArrow} alt="Arrow" />
           </Link>
         </Media>
         <Media greaterThanOrEqual="md">
@@ -129,6 +129,7 @@ const IndexPage = ({ data }) => {
                       <Img
                         fluid={aboutUsImage}
                         className={styles.aboutUsImage}
+                        alt="About Us"
                       />
                     </div>
                     <div
@@ -147,7 +148,7 @@ const IndexPage = ({ data }) => {
                         style={{ color: colors.white }}
                       >
                         <b>Learn more</b>
-                        <Img fixed={rightArrow} />
+                        <Img fixed={rightArrow} alt="Arrow" />
                       </Link>
                     </div>
                   </>
