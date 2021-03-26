@@ -34,6 +34,7 @@ html {
   }
 
   .introductionContainer {
+    width: 80vw;
     grid-area: introduction;
     padding-right: 30px;
     margin-bottom: 40px;
@@ -57,8 +58,10 @@ html {
   }
 
   .ContactInfoContainer {
+    width: 90vw;
     grid-area: contact;
   }
+
   .getInTouchTitle {
     font-family: "BioRhyme", serif;
     margin-bottom: 24px;
@@ -85,7 +88,7 @@ html {
 
   .introductionContainer {
     grid-area: introduction;
-    padding-right: 100px;
+    padding-right: 60px;
   }
 
   .formContainer {
