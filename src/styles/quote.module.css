@@ -34,7 +34,7 @@ html {
   }
 
   .introductionContainer {
-    width: 90vw;
+    width: 80vw;
     grid-area: introduction;
     padding-right: 30px;
     margin-bottom: 40px;
@@ -88,7 +88,7 @@ html {
 
   .introductionContainer {
     grid-area: introduction;
-    padding-right: 100px;
+    padding-right: 60px;
   }
 
   .formContainer {
