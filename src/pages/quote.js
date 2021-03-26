@@ -1,13 +1,8 @@
 import React, { useState } from "react";
 import { graphql } from "gatsby";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faSpinner,
-  faPhone,
-  faEnvelope,
-} from "@fortawesome/free-solid-svg-icons";
+import { faPhone, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import Amplify, { API, graphqlOperation } from "aws-amplify";
-import { Input } from "antd";
+import { Form, Button, Input, Alert } from "antd";
 
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -25,21 +20,11 @@ const Quote = ({ data }) => {
   const facebookLogo = data.allFile.edges[0].node.childImageSharp.fixed;
   const instagramLogo = data.allFile.edges[1].node.childImageSharp.fixed;
 
-  const formState = {
-    name: "",
-    email: "",
-    addressLine: "",
-    addressCity: "",
-    addressState: "",
-    message: "",
-  };
-  const [formData, setFormData] = useState(formState);
+  const [form] = Form.useForm();
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState();
 
-  const handleSubmit = async (evt) => {
-    evt.preventDefault();
-
+  const handleSubmit = async (formData) => {
     setLoading(true);
     try {
       const response = await API.graphql(
@@ -51,7 +36,7 @@ const Quote = ({ data }) => {
       );
 
       if (response && response.data.createQuote.status === "SUCCESS") {
-        setFormData(formState);
+        form.resetFields();
         setMessage("success");
       } else {
         setMessage("error");
@@ -61,10 +46,6 @@ const Quote = ({ data }) => {
     } finally {
       setLoading(false);
     }
-  };
-
-  const onFormChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   return (
@@ -77,7 +58,7 @@ const Quote = ({ data }) => {
       <Header minified />
       <section className={styles.quoteContainer}>
         <div className={styles.introductionContainer}>
-          <h2 className={styles.subTitle}>Get a Quote</h2>
+          <h2 className={styles.subTitle}>Get a quote</h2>
           <p>
             Get a free quote filling the form with your personal data and we'll
             get in touch with you in the following business days.
@@ -89,7 +70,9 @@ const Quote = ({ data }) => {
             <a href="tel:+1 913-401-9400">+1 913-401-9400</a>
           </ContactInfo>
           <ContactInfo contactIcon={faEnvelope} isIcon>
-            <a href="mailto:jonnymn_12@hotmail.com">jonnymn_12@hotmail.com</a>
+            <a href="mailto:allaboutwoodservices@hotmail.com">
+              allaboutwoodservices@hotmail.com
+            </a>
           </ContactInfo>
           <ContactInfo contactIcon={facebookLogo}>
             <a href={socials.facebook} target="_blank" rel="noreferrer">
@@ -103,97 +86,88 @@ const Quote = ({ data }) => {
           </ContactInfo>
         </div>
 
-        <form onSubmit={handleSubmit} className={styles.formContainer}>
-          <div className={styles.formElements}>
-            <label htmlFor="name">
-              Name<span className={styles.required}>*</span>
-            </label>
-            <Input
-              id="name"
-              type="text"
-              value={formData.name}
+        <Form
+          form={form}
+          name="quote"
+          onFinish={handleSubmit}
+          layout={"vertical"}
+          className={styles.formContainer}
+        >
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            <Form.Item
+              label="Name"
               name="name"
-              onChange={onFormChange}
-              required
-            />
-
-            <label htmlFor="email">
-              Email<span className={styles.required}>*</span>
-            </label>
-            <Input
-              id="email"
-              type="email"
-              value={formData.email}
-              name="email"
-              onChange={onFormChange}
-              required
-            />
-            <label htmlFor="addressLine">Address</label>
-            <Input
-              id="addressLine"
-              type="text"
-              value={formData.addressLine}
-              name="addressLine"
-              onChange={onFormChange}
-              placeholder="Address Line"
-            />
-
-            <div className={styles.formAdressContainer}>
-              <Input
-                type="text"
-                value={formData.addressCity}
-                name="addressCity"
-                onChange={onFormChange}
-                placeholder="City"
-              />
-              <Input
-                type="text"
-                value={formData.addressState}
-                name="addressState"
-                onChange={onFormChange}
-                placeholder="State"
-              />
-            </div>
-
-            <label htmlFor="message">
-              Message<span className={styles.required}>*</span>
-            </label>
-            <Input.TextArea
-              id="message"
-              type="text"
-              value={formData.message}
-              name="message"
-              onChange={onFormChange}
-              required
-            />
-            <button
-              className={styles.submitButton}
-              type="submit"
-              disabled={loading}
+              rules={[{ required: true, message: "Please input your name" }]}
             >
-              {loading && (
-                <FontAwesomeIcon
-                  icon={faSpinner}
-                  spin
-                  style={{ marginRight: 10 }}
-                />
-              )}
-              Send
-            </button>
+              <Input />
+            </Form.Item>
+            <Form.Item
+              label="Email"
+              name="email"
+              rules={[{ required: true, message: "Please input your email" }]}
+            >
+              <Input type="email" />
+            </Form.Item>
+            <Form.Item label="Address" name="addressLine">
+              <Input />
+            </Form.Item>
+            <Form.Item style={{ marginBottom: 0 }}>
+              <Form.Item
+                label="State"
+                name="addressState"
+                style={{ display: "inline-block", width: "calc(50% - 4px)" }}
+              >
+                <Input />
+              </Form.Item>
+              <Form.Item
+                label="City"
+                name="addressCity"
+                style={{
+                  display: "inline-block",
+                  width: "calc(50% - 4px)",
+                  marginLeft: "8px",
+                }}
+              >
+                <Input />
+              </Form.Item>
+            </Form.Item>
+            <Form.Item
+              label="Message"
+              name="message"
+              rules={[
+                { required: true, message: "Let us know how we can help" },
+              ]}
+            >
+              <Input.TextArea />
+            </Form.Item>
+            <Form.Item>
+              <Button
+                type="primary"
+                htmlType="submit"
+                className={styles.submitButton}
+                loading={loading}
+              >
+                Submit
+              </Button>
+            </Form.Item>
+            {message && message === "error" && (
+              <Alert
+                message="Error sending the quote"
+                description="Ups! There was an error sending the quote. Please try again or
+              contact with us, we'll be happy to hear from you."
+                type="error"
+              />
+            )}
+            {message && message === "success" && (
+              <Alert
+                message="Quote sent"
+                description="Thank you for sending the quote. We'll make contact with you in
+              the following days."
+                type="success"
+              />
+            )}
           </div>
-          {message && message === "error" && (
-            <div className={styles.responseMessageError}>
-              Ups! There was an error sending the quote. Please try again or
-              contact with us, we'll be happy to hear from you.
-            </div>
-          )}
-          {message && message === "success" && (
-            <div className={styles.responseMessageSuccess}>
-              Thank you for sending the quote. We'll make contact with you in
-              the following days.
-            </div>
-          )}
-        </form>
+        </Form>
       </section>
       <Footer />
     </div>

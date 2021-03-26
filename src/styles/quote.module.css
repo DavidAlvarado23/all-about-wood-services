@@ -45,7 +45,7 @@ html {
     grid-template-rows: auto;
 
     background: white;
-    width: 60vw;
+    width: 70vw;
     border-radius: 15px;
 
     padding: 7%;
@@ -54,8 +54,6 @@ html {
     -webkit-box-shadow: 1px 0px 33px 15px rgba(0, 0, 0, 0.08);
     -moz-box-shadow: 1px 0px 33px 15px rgba(0, 0, 0, 0.08);
     margin-bottom: 50px;
-
-    width: 75%;
   }
 
   .ContactInfoContainer {
@@ -67,15 +65,13 @@ html {
     font-size: 40px;
   }
 
-  .formElements input,
-  .formElements textarea {
-    width: 95%;
-    padding: 0.5em;
-    margin-bottom: 2em;
-    box-sizing: border-box;
+  .formContainer input,
+  .formContainer textarea {
+    width: calc(100% - 22px);
+    padding: 4px 11px;
   }
-
 }
+
 @media screen and (min-width: 1000px) {
   .quoteContainer {
     display: grid;
@@ -115,14 +111,11 @@ html {
     display: none;
   }
 
-  .formElements input,
-  .formElements textarea {
-    padding: 0.5em;
-    margin-bottom: 2em;
-    width: 100%;
-    box-sizing: border-box;
+  .formContainer input,
+  .formContainer textarea {
+    width: calc(100% - 22px);
+    padding: 4px 11px;
   }
-
 }
 
 /* ---------Left Column--------- */
@@ -132,12 +125,7 @@ html {
 
 /* ---------Right Column--------- */
 
-.formContainer input,
-.formElements label {
-  display: block;
-}
-
-.formElements label {
+.formContainer label {
   margin-bottom: 10px;
   font-size: 1.2em;
 }
@@ -164,27 +152,10 @@ html {
 
 .submitButton {
   border: 0;
-  padding: 0.4em;
+  padding: 0.2em;
   width: 180px;
   float: right;
   cursor: pointer;
-  background: #30647c;
   color: #fff;
-  font-size: 20px;
-}
-
-.responseMessageError {
-  margin-top: 20px;
-  padding: 1em;
-  border-radius: 5px;
-  border: 1px solid red;
-  background-color: rgb(240, 166, 142);
-}
-
-.responseMessageSuccess {
-  margin-top: 20px;
-  padding: 1em;
-  border-radius: 5px;
-  border: 1px solid green;
-  background-color: darkseagreen;
+  font-size: 18px;
 }
