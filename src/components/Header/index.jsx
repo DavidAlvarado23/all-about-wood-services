@@ -80,6 +80,7 @@ const Header = ({ minified }) => {
                     <Img
                       className={styles.logo}
                       fluid={data.allFile.edges[0].node.childImageSharp.fluid}
+                      alt="Logo"
                     />
                   </Link>
                 </>
@@ -106,6 +107,7 @@ const Header = ({ minified }) => {
                     <Img
                       className={styles.logo}
                       fluid={data.allFile.edges[0].node.childImageSharp.fluid}
+                      alt="Logo"
                     />
                   </Link>
                   <div className={styles.menu}>

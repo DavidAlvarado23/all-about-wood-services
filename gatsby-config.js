@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: "All About Wood Services",
-    siteUrl: "https://master.d212siyu2nt6mf.amplifyapp.com/",
+    siteUrl: "https://www.allaboutwoodservices.com/",
     author: "David Alvarado",
   },
   plugins: [

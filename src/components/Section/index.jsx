@@ -39,7 +39,11 @@ const Section = ({ rightImage, children }) => {
                 rightImage ? (
                   <>
                     <div className={styles.leftPane}>{children}</div>
-                    <Img className={styles.rightPane} fluid={rightImage} />
+                    <Img
+                      className={styles.rightPane}
+                      fluid={rightImage}
+                      alt="Right Section"
+                    />
                   </>
                 ) : (
                   <>{children}</>

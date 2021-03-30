@@ -11,7 +11,7 @@ const ServiceImage = ({ image, title }) => {
         className={styles.imageRing}
         style={{ border: `2px solid ${colors.white}` }}
       >
-        <Img fluid={image} className={styles.image} />
+        <Img fluid={image} className={styles.image} alt="Service" />
       </div>
       <hr
         className={styles.hr}
