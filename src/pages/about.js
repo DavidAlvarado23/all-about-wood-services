@@ -35,7 +35,10 @@ const About = ({ data }) => {
             alt="About Us"
           />
         </div>
-        <div className={styles.aboutSecondColumn}>
+        <div
+          className={styles.aboutSecondColumn}
+          style={{ backgroundColor: colors.primary.hex }}
+        >
           <p>
             We are a company that was born with the desire to grow day by day,
             working as a team providing an excellent service to our clients.
